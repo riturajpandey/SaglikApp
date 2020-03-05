@@ -391,4 +391,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\unhappy%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rdcheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rdcheck%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rdcheck%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rduncheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rduncheck%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rduncheck%403x.png" />
+  </ItemGroup>
 </Project>

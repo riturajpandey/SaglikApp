@@ -10,8 +10,8 @@ namespace SaglikApp
         {
             InitializeComponent();
 
-            // MainPage = new Views.Welcome.WelcomePage(); 
-            MainPage = new Views.SexAge.SexAgePage();
+          //   MainPage = new Views.Welcome.WelcomePage();
+            MainPage = new Views.HeightWeight.HeightWeightPage();
         }
 
         protected override void OnStart()

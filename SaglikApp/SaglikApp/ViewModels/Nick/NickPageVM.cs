@@ -14,12 +14,14 @@ namespace SaglikApp.ViewModels.Nick
         {
             Navigation = nav;
             NextCommand = new Command(OnNextAsync);
+            BackCommand = new Command(OnBackAsync);
         }
         #endregion
 
-
         #region COMMANDS
         public Command NextCommand { get; set; }
+        public Command BackCommand { get; set; }
+
         #endregion
 
         #region Properties
@@ -43,11 +45,18 @@ namespace SaglikApp.ViewModels.Nick
         /// <summary>
         /// TODO : To Navigate On Next Page...
         /// </summary>
-        private void OnNextAsync(object obj)
+        private async void OnNextAsync(object obj)
         {
-           
+            await Navigation.PushModalAsync(new Views.SexAge.SexAgePage());
         }
 
+        /// <summary>
+        /// TODO : To Navigate To Back Page...
+        /// </summary>
+        public async void OnBackAsync()
+        {
+            await Navigation.PopModalAsync();
+        }
 
         #endregion
     }

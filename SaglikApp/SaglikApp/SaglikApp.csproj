@@ -28,6 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\HeightWeight\HeightWeightPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Radio\RadioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\SexAge\SexAgePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

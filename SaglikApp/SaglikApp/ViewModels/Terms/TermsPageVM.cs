@@ -38,11 +38,11 @@ namespace SaglikApp.ViewModels.Terms
         #region Methods
 
         /// <summary>
-        /// TODO : To Navigate To hhhhhhh Page...
+        /// TODO : To Navigate To Nick Page...
         /// </summary>
         public async void OnProceedAsync()
         {
-           // await Navigation.PushModalAsync(new Views.());
+            await Navigation.PushModalAsync(new Views.Nick.NickPage());
         }
 
         /// <summary>

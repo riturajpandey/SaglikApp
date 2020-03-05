@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="SaglikApp.Views.Nick.NickPage"
+             x:Class="SaglikApp.Views.Nick.NickPage"  Title="Nick Page" NavigationPage.HasNavigationBar="False"
              xmlns:controls="clr-namespace:SaglikApp.CustomControls">
     <ContentPage.Content>
         <!--Main Grid-->
@@ -29,9 +29,9 @@
                     <RowDefinition Height="3*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <!--Lütfen size hitap edebilmemiz için adınızı giriniz/Please enter your name so we can address you-->
+                <!--Lütfen boy ve kilo değerlerinizi giriniz/Please enter your name so we can address you-->
                 <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-20">
-                    <Label Style="{StaticResource PrimaryGraySemiBoldHeaders}" Text="Lütfen size hitap edebilmemiz için adınızı giriniz" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label Style="{StaticResource PrimaryGraySemiBoldHeaders}" Text="Lütfen boy ve kilo değerlerinizi giriniz" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" 
                                                    Margin="30,0,30,0" >
                         <!--Name Section-->
@@ -52,12 +52,18 @@
                             </Grid.ColumnDefinitions>
                             <!--Back Arrow Section-->
                             <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
+                                <controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                </controls:CustomFrameForOpacity.GestureRecognizers>
                                 <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                             </controls:CustomFrameForOpacity>
                             <!--Boxview Section-->
                             <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
                             <!--SONRAKİ/Next Section-->
                             <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
+                                <controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                                </controls:CustomFrameForOpacity.GestureRecognizers>
                                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>

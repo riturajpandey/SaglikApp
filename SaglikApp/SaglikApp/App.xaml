@@ -19,8 +19,10 @@
 
             <!--White Shades-->
             <Color x:Key="AppTextWhiteColor">#FFFFFF</Color>
+            <Color x:Key="BrGrayColor">#F6F6F6</Color>
+            <Color x:Key="BgframColor">#F6FBFF</Color>
             
-            <!--Black Gray Shades-->
+            <!--Black Shades-->
             <Color x:Key="AppTextBlackColor">#000000</Color>
             <Color x:Key="AppTextLightBlackColor">#2F3542</Color>
             
@@ -84,6 +86,7 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
             </Style>
+            
             <!--Rounded Frames-->
             <Style x:Key="RoundedFrame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{StaticResource AppTextWhiteColor}"/>
@@ -108,7 +111,7 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
-
+         
             <!--#endregion-->
 
             <!--#region Labels -->
@@ -151,6 +154,15 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
+            <!--Secondary Regular Gray Labels-->
+            <Style x:Key="SmallRegularLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsRegular}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextLightBlackColor}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
             <!--Primary White Headers-->
             <Style x:Key="PrimaryWhiteHeaders" TargetType="Label">
                 <Setter Property="FontSize" Value="24" />
@@ -172,7 +184,7 @@
             <!--Secondary Blue Labels-->
             <Style x:Key="PrimaryBlueLabels" TargetType="Label">
                 <Setter Property="FontSize" Value="18" />
-                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsBold}" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsMedium}" />
                 <Setter Property="TextColor" Value="{StaticResource AppTextBlueColor}" />
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />

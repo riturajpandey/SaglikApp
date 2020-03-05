@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:SaglikApp.CustomControls"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="SaglikApp.Views.Radio.RadioPage" Title="Radio Page" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <!--Main Grid-->
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Header-->
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image  Source="Ellipse28.png" Aspect="Fill"/>
+                <Image  Source="Ellipse29.png" Aspect="Fill" Margin="0,0,0,15"/>
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-5">
+                    <Image  Source="menu.png" HeightRequest="20" WidthRequest="20"/>
+                    <Image  Source="appname.png" HeightRequest="37" WidthRequest="165"/>
+                </StackLayout>
+            </Grid>
+
+            <!--Middle screen scroll-->
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,25,20,20" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Primary Headers-->
+                    <Label Grid.Row="0"  Text="Lütfen aşağıdaki ifadelerden sizin için geçerli olanların tamamını işaretleyin" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                    <!--I have high blood pressure section Grid-->
+                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <controls:CustomFrameForOpacity Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                <Label Text="Yüksek tansiyonum var" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+
+                                <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" Margin="0,10,0,0">
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <controls:CustomFrameForOpacity Grid.Row="0" IsClippedToBounds="True" HeightRequest="30" WidthRequest="30" CornerRadius="15" BorderColor="#DAE8FE" Padding="5">
+                                            <controls:CustomFrameForOpacity IsClippedToBounds="True" HeightRequest="20" WidthRequest="20" CornerRadius="10" BackgroundColor="#0072C3" Padding="0">
+
+                                            </controls:CustomFrameForOpacity>
+                                        </controls:CustomFrameForOpacity>
+                                       
+                                        <!--<Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                                        <Image Grid.Column="0"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>-->
+                                        <Label Grid.Column="1"  Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
+                                    </Grid>
+                                </controls:CustomFrameForOpacity>
+
+                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" >
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                        <Image Grid.Column="0"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="12" WidthRequest="12" />
+                                        <Label Grid.Column="1"  Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
+                                    </Grid>
+                                </controls:CustomFrameForOpacity>
+
+                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" Margin="0,0,0,15">
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                                        <Image Grid.Column="0"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                                        <Label Grid.Column="1"  Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
+                                    </Grid>
+                                </controls:CustomFrameForOpacity>
+                            </StackLayout>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
+
+                    <!--I do not smoke section Grid-->
+                    <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                <Label Text="Sigara kullanıyorum" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+
+                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" Margin="0,10,0,0">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                        <Image Source="rduncheck.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+                                        <Label Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
+                                    </StackLayout>
+                                </controls:CustomFrameForOpacity>
+
+                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                        <Image Source="unhappy.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+                                        <Label Text="Hayır" Style="{StaticResource SecondaryGrayLabels}" FontSize="18"/>
+                                    </StackLayout>
+                                </controls:CustomFrameForOpacity>
+
+                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" Margin="0,0,0,15">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                        <Image Source="unhappy.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+                                        <Label Text="Bilmiyorum" Style="{StaticResource SecondaryGrayLabels}" FontSize="18"/>
+                                    </StackLayout>
+                                </controls:CustomFrameForOpacity>
+                            </StackLayout>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
+ 
+                    <!--Buttons Section-->
+                    <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="145"/>
+                                </Grid.ColumnDefinitions>
+                                <!--Back Arrow Section-->
+                                <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
+                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </controls:CustomFrameForOpacity>
+                                <!--Boxview Section-->
+                                <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <!--SONRAKİ/Next Section-->
+                                <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
+                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="20"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
+                                        <!--Right Arrow Section-->
+                                        <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Grid>
+                                </controls:CustomFrameForOpacity>
+                            </Grid>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

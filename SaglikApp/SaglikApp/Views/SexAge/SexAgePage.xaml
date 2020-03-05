@@ -12,7 +12,7 @@
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <!--Header-->
             <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -25,40 +25,105 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,35,20,20" VerticalScrollBarVisibility="Never">
-                <Grid RowSpacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,35,20,20" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <!--Primary Headers-->
                     <Label Grid.Row="0"  Text="Lütfen cinsiyetinizi seçiniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                     <!--Male and Female section Grid-->
-                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" >
-                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                <Image Source="blurcheck.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                <Label Text="Kadın" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="20"/>
+                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                <Image Source="femaile.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Label Text="Kadın" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
-                        <controls:CustomFrameForOpacity  Grid.Column="1" Style="{StaticResource PrimaryFrame}" >
-                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                <Image Source="blurcheck.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                <Label Text="Erkek" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="20"/>
+                        <controls:CustomFrameForOpacity  Grid.Column="1" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <Image Source="male.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Label Text="Erkek" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
                     </Grid>
+
                     <Label Grid.Row="2"  Text="Doğum tarihinizi giriniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}"  HorizontalOptions="CenterAndExpand"/>
 
+                    <!--Date Section StackLayout-->
+                    <Grid  Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="DatePck_Tapped" NumberOfTapsRequired="1"/>
+                        </Grid.GestureRecognizers>
+                        <DatePicker x:Name="DatePck" IsVisible="False" DateSelected="DatePkr_DateSelected" Unfocused="DatePkr_Unfocused"/>
+                        <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}"  >
+                                <!--Date Section-->
+                                <Label Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Date}"/>
+                            </controls:CustomFrameForOpacity>
+                            <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" WidthRequest="100" >
+                                <!--Month Section-->
+                                <Label Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Month}"/>
+                            </controls:CustomFrameForOpacity>
+                            <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}"  >
+                                <!--Year Section-->
+                                <Label Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Year}"/>
+                            </controls:CustomFrameForOpacity>
+                        </StackLayout>
+                    </Grid>
+
+                    <!--Grid for blank space Section-->
+                    <Grid Grid.Row="4"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                  
+                    <!--Buttons Section-->
+                    <Grid Grid.Row="5" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="145"/>
+                                </Grid.ColumnDefinitions>
+                                <!--Back Arrow Section-->
+                                <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
+                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </controls:CustomFrameForOpacity>
+                                <!--Boxview Section-->
+                                <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <!--SONRAKİ/Next Section-->
+                                <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
+                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="20"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
+                                        <!--Right Arrow Section-->
+                                        <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Grid>
+                                </controls:CustomFrameForOpacity>
+                            </Grid>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
                 </Grid>
             </ScrollView>
         </Grid>
