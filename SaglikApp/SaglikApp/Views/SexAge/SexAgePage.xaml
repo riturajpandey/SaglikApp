@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:controls="clr-namespace:SaglikApp.CustomControls"
+             x:Class="SaglikApp.Views.SexAge.SexAgePage" Title="SexAgePage" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <!--Main Grid-->
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--Header-->
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image  Source="Ellipse28.png" Aspect="Fill"/>
+                <Image  Source="Ellipse29.png" Aspect="Fill" Margin="0,0,0,15"/>
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-5">
+                    <Image  Source="menu.png" HeightRequest="20" WidthRequest="20"/>
+                    <Image  Source="appname.png" HeightRequest="37" WidthRequest="165"/>
+                </StackLayout>
+            </Grid>
+
+            <!--Middle screen scroll-->
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,35,20,20" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Primary Headers-->                  
+                    <Label Grid.Row="0"  Text="Lütfen cinsiyetinizi seçiniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                    <!--Male and Female section Grid-->
+                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" >
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Source="blurcheck.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Label Text="Kadın" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="20"/>
+                            </StackLayout>
+                        </controls:CustomFrameForOpacity>
+                        <controls:CustomFrameForOpacity  Grid.Column="1" Style="{StaticResource PrimaryFrame}" >
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Source="blurcheck.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Label Text="Erkek" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="20"/>
+                            </StackLayout>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
+                    <Label Grid.Row="2"  Text="Doğum tarihinizi giriniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
