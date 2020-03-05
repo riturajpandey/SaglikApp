@@ -9,24 +9,26 @@
 
     <ContentPage.Content>
         <!--Main Grid-->
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}" RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="90"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="15"/>
             </Grid.RowDefinitions>
             <!--Header-->
             <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Image  Source="headerimg.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Image  Source="Ellipse28.png" Aspect="Fill"/>
+                <Image  Source="Ellipse29.png" Aspect="Fill" Margin="0,0,0,15"/>
                 <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-5">
-                    <Image  Source="menu.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                    <Image  Source="appname.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Image  Source="menu.png" HeightRequest="20" WidthRequest="20"/>
+                    <Image  Source="appname.png" HeightRequest="37" WidthRequest="165"/>
                 </StackLayout>
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,35,20,20" VerticalScrollBarVisibility="Never">
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"   IsClippedToBounds="True" VerticalScrollBarVisibility="Never">
                 <!--Middle screen Frame-->
-                <controls:CustomFrameForOpacity  Style="{StaticResource PrimaryFrame}" >
+                <controls:CustomFrameForOpacity  Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="10,35,20,20">
                     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
