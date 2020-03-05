@@ -50,7 +50,7 @@ namespace SaglikApp.ViewModels.Terms
         /// </summary>
         public async void OnBackAsync()
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         #endregion
