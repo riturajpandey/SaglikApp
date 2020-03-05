@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SaglikApp.Views.Nick.NickPage"
+             xmlns:controls="clr-namespace:SaglikApp.CustomControls">
+    <ContentPage.Content>
+        <!--Main Grid-->
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Header Section-->
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image  Source="Ellipse28.png" Aspect="Fill"/>
+                <Image  Source="Ellipse29.png" Aspect="Fill" Margin="0,0,0,15"/>
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-5">
+                    <Image  Source="menu.png" HeightRequest="20" WidthRequest="20"/>
+                    <Image  Source="appname.png" HeightRequest="37" WidthRequest="165"/>
+                </StackLayout>
+            </Grid>
+            <!--Details Section-->
+            <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,0,10,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Lütfen size hitap edebilmemiz için adınızı giriniz/Please enter your name so we can address you-->
+                <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-20">
+                    <Label Style="{StaticResource PrimaryGraySemiBoldHeaders}" Text="Lütfen size hitap edebilmemiz için adınızı giriniz" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" 
+                                                   Margin="30,0,30,0" >
+                        <!--Name Section-->
+                        <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Name}"/>
+                    </controls:CustomFrameForOpacity>
+                </StackLayout>
+                <!--Buttons Section-->
+                <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="145"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Back Arrow Section-->
+                            <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
+                                <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </controls:CustomFrameForOpacity>
+                            <!--Boxview Section-->
+                            <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <!--SONRAKİ/Next Section-->
+                            <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
+                                    <!--Right Arrow Section-->
+                                    <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </Grid>
+                            </controls:CustomFrameForOpacity>
+                        </Grid>
+                    </controls:CustomFrameForOpacity>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

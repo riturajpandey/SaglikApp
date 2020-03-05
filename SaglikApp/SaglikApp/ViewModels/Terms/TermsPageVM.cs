@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace SaglikApp.ViewModels.Terms
 {
-    public class TermsPageVM : BaseViewModel
+    public class TermsPageVM : BaseViewModel        
     {
         //TODO : To Define Local Class Level Variables..
 
