@@ -17,6 +17,7 @@ namespace SaglikApp.ViewModels.Nick
         }
         #endregion
 
+
         #region COMMANDS
         public Command NextCommand { get; set; }
         #endregion
