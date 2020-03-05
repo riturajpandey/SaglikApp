@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:controls="clr-namespace:SaglikApp.CustomControls"
+             xmlns:inputkit="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              x:Class="SaglikApp.Views.Terms.TermsPage" Title="TermsPage" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
@@ -27,8 +28,9 @@
             <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,35,20,20" VerticalScrollBarVisibility="Never">
                 <!--Middle screen Frame-->
                 <controls:CustomFrameForOpacity  Style="{StaticResource PrimaryFrame}" >
-                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Grid RowSpacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -42,26 +44,61 @@
                         <!--Primary Headers-->
                         <Label Grid.Row="1" Text="Kullanım Şartları" Style="{StaticResource PrimaryGrayHeaders}"/>
                         <Label Grid.Row="2" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie orci, vitae matti" Style="{StaticResource SecondaryGrayLabels}" />
-                        <Label Grid.Row="3" Text=" dolor" Style="{StaticResource SecondaryGrayLabels}" />
-
-                        <!--<Label Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" FontFamily="{StaticResource PoppinsRegular}"
-                                                       FontSize="12">
+                        <Label Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Tebrikler, almak istediğiniz e-posta adresi " TextColor="{StaticResource TextGrayColor}"/>
-                                    <Span Text="uygun." TextColor="{StaticResource TextGrayColor}" FontAttributes="Bold"/>
+                                    <Span Text="Vestibulum convallis bibendum justo sed dignissim. " FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsBold}"/>
+                                    <Span Text="Donec mattis vel enim quis vulputate."  FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsMedium}"/>
                                 </FormattedString>
                             </Label.FormattedText>
-                        </Label>-->
+                        </Label>
+                        <Label Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Phasellus tempus non lectus non scelerisque " FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsBold}"/>
+                                    <Span Text="Duis libero lorem, gravida sit amet consectetur id, porta sed augue."  FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsMedium}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Vestibulum mauris mi, " FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsBold}"/>
+                                    <Span Text="dapibus non iaculis ac, vestibulum et nisi."  FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsMedium}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Grid Grid.Row="6" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
+                            <inputkit:CheckBox Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                               Type="Check" BoxBackgroundColor="{Binding AppTextWhiteColor}" BorderColor="#0072C3" 
+                                               Color="#0072C3" BoxSizeRequest="25" Margin="0,-10,0,0"/>
+                            <Label Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Kullanım Şartlarını " FontSize="14" TextColor="{StaticResource AppTextBlueColor}" FontFamily="{StaticResource PoppinsBold}"/>
+                                        <Span Text="okudum ve kabul ediyorum"  FontSize="14" TextColor="{StaticResource AppTextLightBlackColor}" FontFamily="{StaticResource PoppinsMedium}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
 
-
-
-
-                        <Label Grid.Row="4" Text=" dolor" Style="{StaticResource SecondaryGrayLabels}" />
-                        <Label Grid.Row="5" Text=" dolor" Style="{StaticResource SecondaryGrayLabels}" />
+                        <!--Back Command Tap-->
+                        <controls:CustomFrameForOpacity Grid.Row="7" Style="{StaticResource PinkFrame}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5">
+                                <Image Source="leftarrow.png" Aspect="AspectFit" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="GERİ" Style="{StaticResource SecondaryWhiteLabels}" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                            </controls:CustomFrameForOpacity.GestureRecognizers>
+                        </controls:CustomFrameForOpacity>
                         <!--Proceed Command Tap-->
-                        <controls:CustomFrameForOpacity Grid.Row="6" Style="{StaticResource BlueFrame}">
+                        <controls:CustomFrameForOpacity Grid.Row="7" Style="{StaticResource BlueFrame}">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5">
                                 <Label Text="İLERLE" Style="{StaticResource SecondaryWhiteLabels}" />
                                 <Image Source="rightarrow.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>

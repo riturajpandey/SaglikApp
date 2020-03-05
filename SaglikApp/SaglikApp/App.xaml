@@ -47,6 +47,19 @@
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
             </Style>
 
+            <!--Pink Frames-->
+            <Style x:Key="PinkFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource AppPinkColor}"/>
+                <Setter Property="Padding" Value="10,5,10,5" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
             <!--Blue Frames-->
             <Style x:Key="BlueFrame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{StaticResource AppTextBlueColor}"/>
@@ -60,6 +73,7 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
+            
 
             <!--#endregion-->
 
@@ -125,8 +139,8 @@
             <!--Secondary Blue Labels-->
             <Style x:Key="PrimaryBlueLabels" TargetType="Label">
                 <Setter Property="FontSize" Value="18" />
-                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsMedium}" />
-                <Setter Property="TextColor" Value="{StaticResource AppTextWhiteColor}" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsBold}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextBlueColor}" />
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
