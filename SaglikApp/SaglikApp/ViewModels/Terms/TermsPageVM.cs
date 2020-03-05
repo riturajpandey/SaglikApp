@@ -18,15 +18,16 @@ namespace SaglikApp.ViewModels.Terms
         public TermsPageVM(INavigation nav)
         {
             Navigation = nav;
-           // ProceedCommand = new Command(OnProceedAsync);
-
+            ProceedCommand = new Command(OnProceedAsync);
+            BackCommand = new Command(OnBackAsync);
         }
 
         #endregion
 
         #region COMMANDS
 
-        // public Command ProceedCommand { get; set; }
+        public Command ProceedCommand { get; set; }
+        public Command BackCommand { get; set; }
 
         #endregion
 
@@ -39,10 +40,18 @@ namespace SaglikApp.ViewModels.Terms
         /// <summary>
         /// TODO : To Navigate To hhhhhhh Page...
         /// </summary>
-        //public async void OnProceedAsync()
-        //{
-        //    await Navigation.PushModalAsync(new Views.Accounts.SignupFirstPage());
-        //}
+        public async void OnProceedAsync()
+        {
+           // await Navigation.PushModalAsync(new Views.());
+        }
+
+        /// <summary>
+        /// TODO : To Navigate To Back Page...
+        /// </summary>
+        public async void OnBackAsync()
+        {
+            await Navigation.PopModalAsync();
+        }
 
         #endregion
     }
