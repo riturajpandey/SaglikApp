@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:SaglikApp.CustomControls"
+             x:Class="SaglikApp.Views.Terms.TermsPage" Title="TermsPage" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <!--Main Grid-->
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--Header-->
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image  Source="headerimg.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-5">
+                    <Image  Source="menu.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Image  Source="appname.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Grid>
+
+            <!--Middle screen scroll-->
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,35,20,20" VerticalScrollBarVisibility="Never">
+                <!--Middle screen Frame-->
+                <controls:CustomFrameForOpacity  Style="{StaticResource PrimaryFrame}" >
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!--hand mobile Image-->
+                        <Image Grid.Row="0" Source="handmobile.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <!--Primary Headers-->
+                        <Label Grid.Row="1" Text="Kullanım Şartları" Style="{StaticResource PrimaryGrayHeaders}"/>
+                        <Label Grid.Row="2" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie orci, vitae matti" Style="{StaticResource SecondaryGrayLabels}" />
+                        <Label Grid.Row="3" Text=" dolor" Style="{StaticResource SecondaryGrayLabels}" />
+
+                        <!--<Label Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" FontFamily="{StaticResource PoppinsRegular}"
+                                                       FontSize="12">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Tebrikler, almak istediğiniz e-posta adresi " TextColor="{StaticResource TextGrayColor}"/>
+                                    <Span Text="uygun." TextColor="{StaticResource TextGrayColor}" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>-->
+
+
+
+
+
+                        <Label Grid.Row="4" Text=" dolor" Style="{StaticResource SecondaryGrayLabels}" />
+                        <Label Grid.Row="5" Text=" dolor" Style="{StaticResource SecondaryGrayLabels}" />
+                        <!--Proceed Command Tap-->
+                        <controls:CustomFrameForOpacity Grid.Row="6" Style="{StaticResource BlueFrame}">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5">
+                                <Label Text="İLERLE" Style="{StaticResource SecondaryWhiteLabels}" />
+                                <Image Source="rightarrow.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ProceedCommand}"/>
+                            </controls:CustomFrameForOpacity.GestureRecognizers>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
+                </controls:CustomFrameForOpacity>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

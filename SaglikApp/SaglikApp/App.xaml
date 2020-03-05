@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SaglikApp.App">
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <!--#region Colors -->
+
+            <!--Colors-->
+
+            <!--App Background screeen -->
+            <Color x:Key="AppBkgScreenColor">#EDF6FF</Color>
+
+            <!--White Shades-->
+            <Color x:Key="AppTextWhiteColor">#FFFFFF</Color>
+            
+            <!--Black Gray Shades-->
+            <Color x:Key="AppTextBlackColor">#000000</Color>
+            <Color x:Key="AppTextLightBlackColor">#2F3542</Color>
+            
+            <!--Blue Shades-->
+            <Color x:Key="AppTextBlueColor">#0072C3</Color>
+            <Color x:Key="AppTextLightBlueColor">#33B1FF</Color>
+
+            <!--Pink Shades-->
+            <Color x:Key="AppPinkColor">#FA4D56</Color>
+
+            <!--#endregion-->
+
+            <!--#region Controls -->
+
+            <!--#region Frames -->
+
+            <Style x:Key="PrimaryFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource AppTextWhiteColor}"/>
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+
+            <!--Blue Frames-->
+            <Style x:Key="BlueFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource AppTextBlueColor}"/>
+                <Setter Property="Padding" Value="10,5,10,5" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+
+            <!--#endregion-->
+
+            <!--#region Labels -->
+
+            <!--Primary Gray Headers-->
+            <Style x:Key="PrimaryGrayHeaders" TargetType="Label">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsBold}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextLightBlackColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <!--Primary Gray Semi bold Headers-->
+            <Style x:Key="PrimaryGraySemiBoldHeaders" TargetType="Label">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsSemiBold}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextLightBlackColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+         
+            <!--Secondary Gray Labels-->
+            <Style x:Key="SecondaryGrayLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsMedium}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextLightBlackColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <!--Secondary Regular Gray Labels-->
+            <Style x:Key="SecondaryRegularLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsRegular}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextLightBlackColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <!--Primary White Headers-->
+            <Style x:Key="PrimaryWhiteHeaders" TargetType="Label">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsBold}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextWhiteColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <!--Secondary White Labels-->
+            <Style x:Key="SecondaryWhiteLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsBold}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextWhiteColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <!--Secondary Blue Labels-->
+            <Style x:Key="PrimaryBlueLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsMedium}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextWhiteColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <!--#endregion-->
+
+            <!--#region Entrys -->
+
+            <!--Primary Black Headers-->
+            <Style x:Key="PrimaryEntry" TargetType="Entry">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontFamily" Value="{DynamicResource PoppinsRegular}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextBlackColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource AppTextBlackColor}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TranslationY" Value="3" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region Buttons -->
+
+            <!--Round Primary Button-->
+            <Style x:Key="PrimaryButton" TargetType="Button">
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextBlueColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+
+            <!--#endregion-->
+
+            <!--#endregion-->
+
+            <!--#region Fonts -->
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBlack">
+                <On Platform="iOS" Value="Poppins-Black"/>
+                <On Platform="Android" Value="Poppins-Black.ttf#Poppins-Black"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBlackItalic">
+                <On Platform="iOS" Value="Poppins-BlackItalic"/>
+                <On Platform="Android" Value="Poppins-BlackItalic.ttf#Poppins-BlackItalic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBold">
+                <On Platform="iOS" Value="Poppins-Bold"/>
+                <On Platform="Android" Value="Poppins-Bold.ttf#Poppins-Bold"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBoldItalic">
+                <On Platform="iOS" Value="Poppins-BoldItalic"/>
+                <On Platform="Android" Value="Poppins-BoldItalic.ttf#Poppins-BoldItalic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsExtraBold">
+                <On Platform="iOS" Value="Poppins-ExtraBold"/>
+                <On Platform="Android" Value="Poppins-ExtraBold.ttf#Poppins-ExtraBold"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsExtraBoldItalic">
+                <On Platform="iOS" Value="Poppins-ExtraBoldItalic"/>
+                <On Platform="Android" Value="Poppins-ExtraBoldItalic.ttf#Poppins-ExtraBoldItalic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsExtraLight">
+                <On Platform="iOS" Value="Poppins-ExtraLight"/>
+                <On Platform="Android" Value="Poppins-ExtraLight.ttf#Poppins-ExtraLight"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsExtraLightItalic">
+                <On Platform="iOS" Value="Poppins-ExtraLightItalic"/>
+                <On Platform="Android" Value="Poppins-ExtraLightItalic.ttf#Poppins-ExtraLightItalicc"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsItalic">
+                <On Platform="iOS" Value="Poppins-Italic"/>
+                <On Platform="Android" Value="Poppins-Italic.ttf#Poppins-Italic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsLight">
+                <On Platform="iOS" Value="Poppins-Light"/>
+                <On Platform="Android" Value="Poppins-Light.ttf#Poppins-Light"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsLightItalic">
+                <On Platform="iOS" Value="Poppins-LightItalic"/>
+                <On Platform="Android" Value="Poppins-LightItalic.ttf#Poppins-LightItalic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsMedium">
+                <On Platform="iOS" Value="Poppins-Medium"/>
+                <On Platform="Android" Value="Poppins-Medium.ttf#Poppins-Medium"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsMediumItalic">
+                <On Platform="iOS" Value="Poppins-MediumItalic"/>
+                <On Platform="Android" Value="Poppins-MediumItalic.ttf#Poppins-MediumItalic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsRegular">
+                <On Platform="iOS" Value="Poppins-Regular"/>
+                <On Platform="Android" Value="Poppins-Regular.ttf#Poppins-Regular"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsSemiBold">
+                <On Platform="iOS" Value="Poppins-SemiBold"/>
+                <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins-SemiBold"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsSemiBoldItalic">
+                <On Platform="iOS" Value="Poppins-SemiBoldItalic"/>
+                <On Platform="Android" Value="Poppins-SemiBoldItalic.ttf#Poppins-SemiBoldItalic"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsThin">
+                <On Platform="iOS" Value="Poppins-Thin"/>
+                <On Platform="Android" Value="Poppins-Thin.ttf#Poppins-Thin"/>
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsThinItalic">
+                <On Platform="iOS" Value="Poppins-ThinItalic"/>
+                <On Platform="Android" Value="Poppins-ThinItalic.ttf#Poppins-ThinItalic"/>
+            </OnPlatform>
+            <!--#endregion-->
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
