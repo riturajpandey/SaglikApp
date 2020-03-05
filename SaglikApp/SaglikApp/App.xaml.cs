@@ -10,7 +10,7 @@ namespace SaglikApp
         {
             InitializeComponent();
 
-            MainPage = new Views.Welcome.WelcomePage();
+            MainPage = new Views.Nick.NickPage();
         }
 
         protected override void OnStart()

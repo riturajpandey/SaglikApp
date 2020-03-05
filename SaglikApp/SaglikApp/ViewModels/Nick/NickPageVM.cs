@@ -22,7 +22,19 @@ namespace SaglikApp.ViewModels.Nick
         #endregion
 
         #region Properties
-
+        private string _Name= "Ahmet";
+        public string Name
+        {
+            get { return _Name; }
+            set
+            {
+                if (_Name != value)
+                {
+                    _Name = value;
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
         #endregion
 
         #region Methods
