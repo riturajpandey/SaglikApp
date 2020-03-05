@@ -36,8 +36,8 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <!--Primary Headers-->                  
-                    <Label Grid.Row="0"  Text="Lütfen cinsiyetinizi seçiniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                    <!--Primary Headers-->
+                    <Label Grid.Row="0"  Text="Lütfen cinsiyetinizi seçiniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                     <!--Male and Female section Grid-->
                     <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                         <Grid.ColumnDefinitions>
@@ -57,7 +57,7 @@
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
                     </Grid>
-                    <Label Grid.Row="2"  Text="Doğum tarihinizi giriniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                    <Label Grid.Row="2"  Text="Doğum tarihinizi giriniz" Style="{StaticResource PrimaryGraySemiBoldHeaders}"  HorizontalOptions="CenterAndExpand"/>
 
                 </Grid>
             </ScrollView>
