@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:SaglikApp.CustomControls"
+             xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
              mc:Ignorable="d"
-             x:Class="SaglikApp.Views.Nick.NickPage"  Title="Nick Page" NavigationPage.HasNavigationBar="False"
-             xmlns:controls="clr-namespace:SaglikApp.CustomControls">
-    
+             x:Class="SaglikApp.Views.Scroll.ScrollPage"  Title="Scroll Page" NavigationPage.HasNavigationBar="False">
+
     <ContentPage.Content>
         <!--Main Grid-->
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}" RowSpacing="0">
@@ -30,15 +31,38 @@
                     <RowDefinition Height="3*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <!--Lütfen boy ve kilo değerlerinizi giriniz/Please enter your name so we can address you-->
-                <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-20">
-                    <Label Style="{StaticResource PrimaryGraySemiBoldHeaders}" Text="Lütfen boy ve kilo değerlerinizi giriniz" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                    <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" 
-                                                   Margin="30,0,30,0" >
-                        <!--Name Section-->
-                        <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Name}"/>
+                <!--Baş ağrınızın şiddeti ne düzeyde? / How severe is your headache? -->
+                <StackLayout Grid.Row="1" Orientation="Vertical"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-20">
+                    <Label Style="{StaticResource PrimaryGraySemiBoldHeaders}" Text="Baş ağrınızın şiddeti ne düzeyde?" HorizontalTextAlignment="Center" HorizontalOptions="Center" Padding="40,10"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <Image Source="happysmile.png" IsVisible="{Binding IsRadioYesImg}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="25" WidthRequest="25" />
+                        <Image Source="unhappy.png" IsVisible="{Binding IsRadioYesImg}" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="25" WidthRequest="25" />
+                    </StackLayout>
+
+                    <!--Slider Section-->
+                    <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                        <range:SfRangeSlider x:Name="rangeslider" Minimum="0" Maximum="10" LabelColor="Red" SnapsTo="StepValues" StepFrequency="1"
+                      ShowRange="False" Value="0" RangeStart="0" RangeEnd="5" Orientation="Horizontal" TickFrequency="1" ShowCustomLabel="True"
+                       TickPlacement="None" TrackColor="{StaticResource AppBkgScreenColor}" TrackSelectionColor="{StaticResource AppTextBlueColor}" TrackSelectionThickness="5" TrackThickness="5" KnobColor="White" 
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Start"  FontSize="16" FontFamily="{StaticResource PoppinsSemiBold}" >
+                        </range:SfRangeSlider>
                     </controls:CustomFrameForOpacity>
+                    <StackLayout Orientation="Horizontal" Spacing="22" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="0" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="1" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="2" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="3" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="4" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="5" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="6" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="7" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="8" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="9" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                        <Label Text="10" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                    </StackLayout>
+
                 </StackLayout>
+                
                 <!--Buttons Section-->
                 <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                     <Grid.RowDefinitions>
@@ -81,4 +105,5 @@
             </Grid>
         </Grid>
     </ContentPage.Content>
+
 </ContentPage>

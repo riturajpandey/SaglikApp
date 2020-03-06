@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:SaglikApp.CustomControls"
+             mc:Ignorable="d"
+             x:Class="SaglikApp.Views.Symptoms.DistinctiveSymptomsPage"  Title="Distinctive Symptoms Page" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <!--Main Grid-->
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppBkgScreenColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Header-->
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image  Source="Ellipse28.png" Aspect="Fill"/>
+                <Image  Source="Ellipse29.png" Aspect="Fill" Margin="0,0,0,15"/>
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-5">
+                    <Image  Source="menu.png" HeightRequest="20" WidthRequest="20"/>
+                    <Image  Source="appname.png" HeightRequest="37" WidthRequest="165"/>
+                </StackLayout>
+            </Grid>
+
+            <!--Middle screen scroll-->
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,25,20,10" VerticalScrollBarVisibility="Never">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Primary Headers-->
+                    <!--En Belirgin Semptomlar  / Most Distinctive Symptoms -->
+                    <Label Grid.Row="0"  Text="En Belirgin Semptomlar" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+
+                    <!--Middle screen Frame-->
+                    <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
+                        <Grid ColumnSpacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0"  Grid.Column="0" Text="Halsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="0"  Grid.Column="1" Text="Halsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="1"  Grid.Column="0" Text="Sarılık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="1"  Grid.Column="1" Text="Sarılık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <controls:CustomFrameForOpacity Grid.Row="2"  Grid.Column="0" Style="{StaticResource RoundedFrame}" HeightRequest="25" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" >
+                                <Grid HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Nefes Darlığı" Style="{StaticResource BoldBlueLabels}"  Padding="5,0"/>
+                                </Grid>
+                            </controls:CustomFrameForOpacity>
+                            <Label Grid.Row="2"  Grid.Column="1" Text="Nefes Darlığı" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="3"  Grid.Column="0" Text="İştahsızlık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="3"  Grid.Column="1" Text="İştahsızlık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <controls:CustomFrameForOpacity Grid.Row="4"  Grid.Column="0" Style="{StaticResource RoundedFrame}" HeightRequest="25" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" >
+                                <Grid HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Kilo Kaybı" Style="{StaticResource BoldBlueLabels}"  Padding="5,0"/>
+                                </Grid>
+                            </controls:CustomFrameForOpacity>
+                            <Label Grid.Row="4"  Grid.Column="1" Text="Kilo Kaybı" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="5"  Grid.Column="0" Text="Halsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="5"  Grid.Column="1" Text="Halsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="6"  Grid.Column="0" Text="Ateş" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="6"  Grid.Column="1" Text="Ateş" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="7"  Grid.Column="0" Text="Keyifsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="7"  Grid.Column="1" Text="Keyifsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="8"  Grid.Column="0" Text="Halsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <controls:CustomFrameForOpacity Grid.Row="8"  Grid.Column="1" Style="{StaticResource RoundedFrame}" HeightRequest="25" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" >
+                                <Grid HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Halsizlik" Style="{StaticResource BoldBlueLabels}"  Padding="5,0"/>
+                                </Grid>
+                            </controls:CustomFrameForOpacity>
+                            <Label Grid.Row="9"  Grid.Column="0" Text="Sarılık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="9"  Grid.Column="1" Text="Sarılık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="10" Grid.Column="0" Text="Nefes Darlığı" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="10" Grid.Column="1" Text="Nefes Darlığı" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <controls:CustomFrameForOpacity Grid.Row="11"  Grid.Column="0" Style="{StaticResource RoundedFrame}" HeightRequest="25" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" >
+                                <Grid HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="İştahsızlık" Style="{StaticResource BoldBlueLabels}"  Padding="5,0"/>
+                                </Grid>
+                            </controls:CustomFrameForOpacity>
+                            <Label Grid.Row="11" Grid.Column="1" Text="İştahsızlık" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="12" Grid.Column="0" Text="Kilo Kaybı" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="12" Grid.Column="1" Text="Kilo Kaybı" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="13" Grid.Column="0" Text="Ateş" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="13" Grid.Column="1" Text="Ateş" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="14" Grid.Column="0" Text="Keyifsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            <Label Grid.Row="14" Grid.Column="1" Text="Keyifsizlik" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16"/>
+                            
+
+                        </Grid>
+                    </controls:CustomFrameForOpacity>
+
+                    <!--Buttons Section-->
+                    <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="145"/>
+                                </Grid.ColumnDefinitions>
+                                <!--Back Arrow Section-->
+                                <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
+                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </controls:CustomFrameForOpacity>
+                                <!--Boxview Section-->
+                                <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <!--SONRAKİ/Next Section-->
+                                <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
+                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="20"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
+                                        <!--Right Arrow Section-->
+                                        <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Grid>
+                                </controls:CustomFrameForOpacity>
+                            </Grid>
+                        </controls:CustomFrameForOpacity>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

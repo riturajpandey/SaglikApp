@@ -190,6 +190,15 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
+            <!--Secondary Blue PoppinsBold Labels-->
+            <Style x:Key="BoldBlueLabels" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{DynamicResource  PoppinsBold}" />
+                <Setter Property="TextColor" Value="{StaticResource AppTextBlueColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
             <!--SemiBold Labels-->
             <Style x:Key="SemiBoldWhiteLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="16" />

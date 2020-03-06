@@ -31,93 +31,81 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                       
                     </Grid.RowDefinitions>
 
                     <!--Primary Headers-->
                     <Label Grid.Row="0"  Text="Lütfen aşağıdaki ifadelerden sizin için geçerli olanların tamamını işaretleyin" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-                    <!--I have high blood pressure section Grid-->
-                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <controls:CustomFrameForOpacity Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
-                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                <Label Text="Yüksek tansiyonum var" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
 
-                                <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" Margin="0,10,0,0">
-                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="30"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <controls:CustomFrameForOpacity Grid.Row="0" IsClippedToBounds="True" HeightRequest="30" WidthRequest="30" CornerRadius="15" BorderColor="#DAE8FE" Padding="5">
-                                            <controls:CustomFrameForOpacity IsClippedToBounds="True" HeightRequest="20" WidthRequest="20" CornerRadius="10" BackgroundColor="#0072C3" Padding="0">
-
-                                            </controls:CustomFrameForOpacity>
+                    <!--RepeaterView section -->
+                    <controls:RepeaterView Grid.Row="1" x:Name="lvRadioBP" ItemsSource="{Binding RadioBPList}"  HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" >
+                        <controls:RepeaterView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <controls:CustomFrameForOpacity Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+                                                <Label Text="{Binding Title}" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                                                <!--Radio Yes section -->
+                                                <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" Margin="0,10,0,0">
+                                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="YesClick_Tapped" NumberOfTapsRequired="1"/>
+                                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <!--<Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30" />-->
+                                                        <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}"  />
+                                                        <Image Grid.Column="0"  Source="rdcheck.png" IsVisible="{Binding IsRadioYesImg}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+                                                        <Label Grid.Column="1"  Text="{Binding RadioYes}" Style="{StaticResource PrimaryBlueLabels}"/>
+                                                    </Grid>
+                                                </controls:CustomFrameForOpacity>
+                                               
+                                                <!--Radio No section -->
+                                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" >
+                                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="NoClick_Tapped" NumberOfTapsRequired="1"/>
+                                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <!--<Image Grid.Column="0"  Source="rduncheck.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30" />-->
+                                                        <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}"  />
+                                                        <Image Grid.Column="0"  IsVisible="{Binding IsRadioNoImg}"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+                                                        <Label Grid.Column="1"  Text="{Binding RadioNo}" Style="{StaticResource PrimaryBlueLabels}"/>
+                                                    </Grid>
+                                                </controls:CustomFrameForOpacity>
+                                            
+                                                <!--Radio Not Know section -->
+                                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" Margin="0,0,0,15">
+                                                    <controls:CustomFrameForOpacity.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="NotKnowClick_Tapped"  NumberOfTapsRequired="1"/>
+                                                    </controls:CustomFrameForOpacity.GestureRecognizers>
+                                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <!--<Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="30" WidthRequest="30" />-->
+                                                        <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}"  />
+                                                        <Image Grid.Column="0" Source="rdcheck.png" IsVisible="{Binding IsRadioNotKnowImg}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+                                                        <Label Grid.Column="1"  Text="{Binding RadioNotKnow}" Style="{StaticResource PrimaryBlueLabels}"/>
+                                                    </Grid>
+                                                </controls:CustomFrameForOpacity>
+                                            </StackLayout>
                                         </controls:CustomFrameForOpacity>
-                                       
-                                        <!--<Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-                                        <Image Grid.Column="0"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>-->
-                                        <Label Grid.Column="1"  Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
                                     </Grid>
-                                </controls:CustomFrameForOpacity>
-
-                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" >
-                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="30"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                                        <Image Grid.Column="0"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" HeightRequest="12" WidthRequest="12" />
-                                        <Label Grid.Column="1"  Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
-                                    </Grid>
-                                </controls:CustomFrameForOpacity>
-
-                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" Margin="0,0,0,15">
-                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="30"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Image Grid.Column="0" Source="rduncheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-                                        <Image Grid.Column="0"  Source="rdcheck.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-                                        <Label Grid.Column="1"  Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
-                                    </Grid>
-                                </controls:CustomFrameForOpacity>
-                            </StackLayout>
-                        </controls:CustomFrameForOpacity>
-                    </Grid>
-
-                    <!--I do not smoke section Grid-->
-                    <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
-                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                <Label Text="Sigara kullanıyorum" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-
-                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BackgroundColor="{StaticResource BgframColor}" BorderColor="{StaticResource BrGrayColor}" Margin="0,10,0,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                        <Image Source="rduncheck.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
-                                        <Label Text="Event" Style="{StaticResource PrimaryBlueLabels}"/>
-                                    </StackLayout>
-                                </controls:CustomFrameForOpacity>
-
-                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" >
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                        <Image Source="unhappy.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
-                                        <Label Text="Hayır" Style="{StaticResource SecondaryGrayLabels}" FontSize="18"/>
-                                    </StackLayout>
-                                </controls:CustomFrameForOpacity>
-
-                                <controls:CustomFrameForOpacity Style="{StaticResource RoundedFrame}" HeightRequest="30" BorderColor="{StaticResource BrGrayColor}" Margin="0,0,0,15">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                        <Image Source="unhappy.png" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
-                                        <Label Text="Bilmiyorum" Style="{StaticResource SecondaryGrayLabels}" FontSize="18"/>
-                                    </StackLayout>
-                                </controls:CustomFrameForOpacity>
-                            </StackLayout>
-                        </controls:CustomFrameForOpacity>
-                    </Grid>
- 
+                                </ViewCell>
+                            </DataTemplate>
+                        </controls:RepeaterView.ItemTemplate>
+                    </controls:RepeaterView>
+               
                     <!--Buttons Section-->
                     <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                         <Grid.RowDefinitions>

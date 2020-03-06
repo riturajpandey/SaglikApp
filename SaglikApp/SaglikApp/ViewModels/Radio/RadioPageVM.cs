@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SaglikApp.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
@@ -15,17 +17,39 @@ namespace SaglikApp.ViewModels.Radio
             Navigation = nav;
             NextCommand = new Command(OnNextAsync);
             BackCommand = new Command(OnBackAsync);
+           
+
+            //TODO : Dummy Data in list
+            RadioBPList = new ObservableCollection<RadioBPModel>
+            {
+                 new RadioBPModel{Id="0", Title="Yüksek tansiyonum var", RadioYes="Evet",RadioNo="Hayır",RadioNotKnow="Bilmiyorum", IsRadioYesImg=true, IsRadioNoImg=false , IsRadioNotKnowImg=false},
+                 new RadioBPModel{Id="1", Title="Sigara kullanıyorum",RadioYes="Evet", RadioNo="Hayır",RadioNotKnow="Bilmiyorum", IsRadioYesImg=true, IsRadioNoImg=false , IsRadioNotKnowImg=false},
+            };
         }
         #endregion
 
         #region COMMANDS
         public Command NextCommand { get; set; }
         public Command BackCommand { get; set; }
+       
 
         #endregion
 
         #region Properties
-      
+
+        private ObservableCollection<RadioBPModel> _RadioBPList;
+        public ObservableCollection<RadioBPModel> RadioBPList
+        {
+            get { return _RadioBPList; }
+            set
+            {
+                if (_RadioBPList != value)
+                {
+                    _RadioBPList = value;
+                    OnPropertyChanged("RadioBPList");
+                }
+            }
+        }
 
         #endregion
 
@@ -36,7 +60,7 @@ namespace SaglikApp.ViewModels.Radio
         /// </summary>
         private async void OnNextAsync(object obj)
         {
-            await Navigation.PushModalAsync(new Views.SexAge.SexAgePage());
+            await Navigation.PushModalAsync(new Views.Three.ThreePage());
         }
 
         /// <summary>
@@ -46,6 +70,8 @@ namespace SaglikApp.ViewModels.Radio
         {
             await Navigation.PopModalAsync();
         }
+
+        
 
         #endregion
     }

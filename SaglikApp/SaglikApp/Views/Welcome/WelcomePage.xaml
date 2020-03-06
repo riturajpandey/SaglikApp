@@ -28,7 +28,7 @@
             <!--Middle screen scroll-->
             <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"   IsClippedToBounds="True" VerticalScrollBarVisibility="Never">
                 <!--Middle screen Frame-->
-                <controls:CustomFrameForOpacity  Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="10,35,20,20">
+                <controls:CustomFrameForOpacity  Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="20,35,20,20">
                     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>

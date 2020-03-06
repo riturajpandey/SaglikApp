@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.SfRangeSlider.XForms.iOS;
 using UIKit;
 
 namespace SaglikApp.iOS
@@ -26,6 +27,10 @@ namespace SaglikApp.iOS
             global::Xamarin.Forms.Forms.Init();
             Rg.Plugins.Popup.Popup.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
+
+            //SynFussion Slider
+            new SfRangeSliderRenderer();
+           
             #endregion
 
             LoadApplication(new App());
