@@ -418,4 +418,34 @@
   <ItemGroup>
     <BundleResource Include="Resources\rduncheck%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\whiteCrossimg%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chestimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chestimg%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chestimg%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\detail%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\detail%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\triangleimg%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\triangleimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\triangleimg%402x.png" />
+  </ItemGroup>
 </Project>

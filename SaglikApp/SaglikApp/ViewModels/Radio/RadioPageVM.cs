@@ -17,14 +17,6 @@ namespace SaglikApp.ViewModels.Radio
             Navigation = nav;
             NextCommand = new Command(OnNextAsync);
             BackCommand = new Command(OnBackAsync);
-           
-
-            //TODO : Dummy Data in list
-            RadioBPList = new ObservableCollection<RadioBPModel>
-            {
-                 new RadioBPModel{Id="0", Title="Yüksek tansiyonum var", RadioYes="Evet",RadioNo="Hayır",RadioNotKnow="Bilmiyorum", IsRadioYesImg=true, IsRadioNoImg=false , IsRadioNotKnowImg=false},
-                 new RadioBPModel{Id="1", Title="Sigara kullanıyorum",RadioYes="Evet", RadioNo="Hayır",RadioNotKnow="Bilmiyorum", IsRadioYesImg=true, IsRadioNoImg=false , IsRadioNotKnowImg=false},
-            };
         }
         #endregion
 
