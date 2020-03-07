@@ -10585,35 +10585,33 @@ namespace SaglikApp.Droid
 			
 			// aapt resource value: 0x7F070092
 			public const int roundedbgdark = 2131165330;
-			public const int sfprogressbar_determinate_linear = 2131165330;
 			
 			// aapt resource value: 0x7F070093
 			public const int search = 2131165331;
-			public const int sfprogressbar_indeterminate_circular = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int tooltip_frame_dark = 2131165332;
+			public const int sfprogressbar_determinate_linear = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int tooltip_frame_light = 2131165333;
+			public const int sfprogressbar_indeterminate_circular = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int triangleimg = 2131165334;
+			public const int sfprogressbar_indeterminate_linear = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int unhappy = 2131165335;
+			public const int tooltip_frame_dark = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int whiteCrossimg = 2131165336;
+			public const int tooltip_frame_light = 2131165336;
 			
-			// aapt resource value: 0x7F070095
-			public const int tooltip_frame_dark = 2131165333;
+			// aapt resource value: 0x7F070099
+			public const int triangleimg = 2131165337;
 			
-			// aapt resource value: 0x7F070096
-			public const int tooltip_frame_light = 2131165334;
+			// aapt resource value: 0x7F07009A
+			public const int unhappy = 2131165338;
 			
-			// aapt resource value: 0x7F070097
-			public const int unhappy = 2131165335;
+			// aapt resource value: 0x7F07009B
+			public const int whiteCrossimg = 2131165339;
 			
 			static Drawable()
 			{

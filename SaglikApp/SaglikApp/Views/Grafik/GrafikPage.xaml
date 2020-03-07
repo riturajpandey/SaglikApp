@@ -4,9 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:SaglikApp.CustomControls"
-             xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"
              mc:Ignorable="d"
-             x:Class="SaglikApp.Views.Liste.ListePage" Title="Liste Page" NavigationPage.HasNavigationBar="False">
+             x:Class="SaglikApp.Views.Grafik.GrafikPage">
 
     <ContentPage.Content>
         <!--Main Grid-->
@@ -42,45 +41,54 @@
 
                     <!--Sonuçlar  / Results -->
                     <Label Grid.Row="1"  Text="Lütfen aşağıdaki listenin tam olmayabileceğini, yalnızca bilgilendirme amaçlı olarak sunulduğunu ve uzman bir tıbbi görüş içermediğini dikkate alınız." Style="{StaticResource SmallRegularLabels}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="12"/>
-                    <!--Middle screen Frame-->
-                    <controls:CustomFrameForOpacity Grid.Row="2" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
-                        <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+
+                    <!--Popup-->
+                    <controls:CustomFrameForOpacity Grid.Row="2" Padding="0" IsClippedToBounds="True" CornerRadius="20" BackgroundColor="{StaticResource AppTextWhiteColor}" Margin="0,10">
+                        <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="90"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="10"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="60"/>
                             </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource AppTextBlueColor}" Padding="0,0,10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="drperson.png" Aspect="AspectFill" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="0,15"/>
+                                <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource PrimaryWhiteHeaders}" FontSize="18" Text="Acil tıbbi yardım gerektirir!" VerticalOptions="Center" TranslationY="7"/>
+                            </Grid>
+
+                            <Label Grid.Row="1" Text="Yakın zamanda bir tıbbi uzmana danışmanız iyi olabilir." Style="{StaticResource SecondaryGrayLabels}" Padding="15,0"/>
+
+                            <BoxView  Grid.Row="2"  HeightRequest="1" BackgroundColor="{StaticResource BrGrayColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+
+                            <Label Grid.Row="3"  Text="Daha fazla inceleme gerektiren semptomlar:" Style="{StaticResource SmallRegularLabels}" FontSize="13" Padding="15,5"/>
+
                             <!--RepeaterView Symptoms section -->
-                            <controls:RepeaterView Grid.Row="0"  x:Name="lvMedicalResul" ItemsSource="{Binding MedicalResulList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                            <controls:RepeaterView Grid.Row="4"  x:Name="lvMedicalResul" ItemsSource="{Binding MedicalResulList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                                 <controls:RepeaterView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
-                                            <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="Auto"/>
-                                                    <RowDefinition Height="25"/>
-                                                    <RowDefinition Height="20"/>
-                                                    <RowDefinition Height="10"/>
-                                                </Grid.RowDefinitions>
+                                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="15,5">
                                                 <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15"/>
                                                     <ColumnDefinition Width="*"/>
-                                                    <ColumnDefinition Width="20"/>
                                                 </Grid.ColumnDefinitions>
-                                                <progressBar:SfLinearProgressBar Grid.Row="0" Grid.Column="0" Progress="{Binding Progess}" TrackHeight="40" ProgressColor="{Binding ProgessColor}" />
-                                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Progesspercent}" FontSize="12" Style="{StaticResource SemiBoldWhiteLabel}" Padding="10,0"/>
-                                                <Image Grid.Row="0" Grid.Column="1" Source="detail.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                                <Label Grid.Row="1" Grid.Column="0"  Text="{Binding DiseaseName}" FontSize="18" Style="{StaticResource PrimaryGrayHeaders}"/>
-                                                <Label Grid.Row="2" Grid.Column="0"  Text="{Binding Status}" FontSize="10" Style="{StaticResource SmallRegularLabels}" TextColor="{StaticResource GrayTextSmallColor}" />
-                                                <BoxView  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" BackgroundColor="{StaticResource BrGrayColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                                                <BoxView  Grid.Column="0" WidthRequest="4" BackgroundColor="{Binding ProgessColor}" HorizontalOptions="Center" VerticalOptions="FillAndExpand" />
+                                                <Label Grid.Column="1"  Text="{Binding DiseaseName}" Style="{StaticResource PrimaryGraySemiBoldHeaders}" FontSize="16" />
                                             </Grid>
                                         </ViewCell>
                                     </DataTemplate>
                                 </controls:RepeaterView.ItemTemplate>
                             </controls:RepeaterView>
+
                         </Grid>
                     </controls:CustomFrameForOpacity>
+
 
                     <!--Buttons Section-->
                     <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
@@ -107,7 +115,7 @@
 
                                 <!--Boxview Section-->
                                 <Grid Grid.Column="1" HeightRequest="4"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-                               
+
                                 <!--Back Arrow Section-->
                                 <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource CircleFrame}" WidthRequest="143">
                                     <controls:CustomFrameForOpacity.GestureRecognizers>
@@ -120,7 +128,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="İLERLER"/>
                                         <!--Right Arrow Section-->
-                                        <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        <Image Grid.Column="1" Source="refresh.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                                     </Grid>
                                 </controls:CustomFrameForOpacity>
                             </Grid>

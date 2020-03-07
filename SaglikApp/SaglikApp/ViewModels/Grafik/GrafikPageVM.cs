@@ -5,14 +5,14 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
-namespace SaglikApp.ViewModels.Liste
+namespace SaglikApp.ViewModels.Grafik
 {
-    public class ListePageVM : BaseViewModel
+    public class GrafikPageVM : BaseViewModel
     {
         //TODO : To Define Local Class Level Variables..
 
         #region CONSTRUCTOR
-        public ListePageVM(INavigation nav)
+        public GrafikPageVM(INavigation nav)
         {
             Navigation = nav;
             NextCommand = new Command(OnNextAsync);
@@ -21,11 +21,9 @@ namespace SaglikApp.ViewModels.Liste
             //TODO : Dummy Data in list
             MedicalResulList = new ObservableCollection<MedicalResultModel>
             {
-                 new MedicalResultModel{Id="0", DiseaseName="Huzursuz bağırsak" ,Status="Güçlü kanıt" ,Progesspercent="% 79" ,Progess="79", ProgessColor="#FA4D56"},
-                 new MedicalResultModel{Id="1", DiseaseName="Mide çepheri iltihabı" ,Status="Orta düzeyde kanıt" ,Progesspercent="% 59" ,Progess="59", ProgessColor="#62B5F0"},
-                 new MedicalResultModel{Id="2", DiseaseName="Gıda zehirlenmesi" ,Status="Orta düzeyde kanıt" ,Progesspercent="% 33" ,Progess="33", ProgessColor="#62B5F0"},
-                 new MedicalResultModel{Id="3", DiseaseName="Bağırsak tıkanması ve adinamik ileus" ,Status="Zayıf kanıt" ,Progesspercent="% 23" ,Progess="23", ProgessColor="#A5D9FF"},
-                 new MedicalResultModel{Id="4", DiseaseName="Diğer" ,Status="Bilinmeyen" ,Progesspercent="% 18" ,Progess="18", ProgessColor="#C4C4C4"},
+                 new MedicalResultModel{Id="0", DiseaseName="Öksürünce veya hareket edince şiddetlenen karın ağrısı" , ProgessColor="#FA4D56"},
+                 new MedicalResultModel{Id="0", DiseaseName="Düzensiz bağırsak harekteleri" , ProgessColor="#62B5F0"},
+
             };
         }
         #endregion
@@ -61,7 +59,7 @@ namespace SaglikApp.ViewModels.Liste
         /// </summary>
         private async void OnNextAsync(object obj)
         {
-            await Navigation.PushModalAsync(new Views.Grafik.GrafikPage());
+          //  await Navigation.PushModalAsync(new Views.Grafik.GrafikPage());
         }
 
         /// <summary>

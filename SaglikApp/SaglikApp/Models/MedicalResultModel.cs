@@ -10,6 +10,7 @@ namespace SaglikApp.Models
         public string Id { get; set; }
         public string DiseaseName { get; set; }
         public string Status { get; set; }
+        public string Progess { get; set; }
         public string Progesspercent { get; set; }
         public string ProgessColor { get; set; }
 
