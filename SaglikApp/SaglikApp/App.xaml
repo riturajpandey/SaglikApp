@@ -29,11 +29,14 @@
             <!--Gray Shades-->
             <Color x:Key="TextGrayColor">#CFCFCF</Color>
             <Color x:Key="DarkTextGrayColor">#ADADAD</Color>
-
+            <Color x:Key="ProgessGrayColor">#C4C4C4</Color>
 
             <!--Blue Shades-->
             <Color x:Key="AppTextBlueColor">#0072C3</Color>
             <Color x:Key="AppTextLightBlueColor">#33B1FF</Color>
+            <Color x:Key="ProgessBlueColor">#62B5F0</Color>
+            <Color x:Key="ProgessLightBlueColor">#A5D9FF</Color>
+
 
             <!--Pink Shades-->
             <Color x:Key="AppPinkColor">#FA4D56</Color>

@@ -60,7 +60,7 @@ namespace SaglikApp.ViewModels.Symptoms
         #region Methods
 
         /// <summary>
-        /// TODO : To Navigate On Select Box Page...
+        /// TODO : To Navigate On Liste Page...
         /// </summary>
         private async void OnNextAsync(object obj)
         {

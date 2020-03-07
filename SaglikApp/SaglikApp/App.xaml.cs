@@ -14,7 +14,7 @@ namespace SaglikApp
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("ODM3ODRAMzEzNzJlMzEyZTMwZmlxZnVXdVJ1U0pTRUExVkM3WE10OGx5NktJOEJtOVdCdUdlSTJORmtyYz0=");
 
               MainPage = new Views.Welcome.WelcomePage();
-         //   MainPage = new Views.Symptoms.DistinctiveSymptomsPage();
+          //  MainPage = new Views.Symptoms.DistinctiveSymptomsPage();
         }
 
         protected override void OnStart()
