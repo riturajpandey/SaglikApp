@@ -8,7 +8,21 @@ namespace SaglikApp.Models
     public class SymptomsNameModel : BindableObject
     {
         public string Id { get; set; }
-        public string SymptomsName { get; set; }
+        //public string SymptomsName { get; set; }
+
+        private string _SymptomsName;
+        public string SymptomsName
+        {
+            get { return _SymptomsName; }
+            set
+            {
+                if (_SymptomsName != value)
+                {
+                    _SymptomsName = value;
+                    OnPropertyChanged("SymptomsName");
+                }
+            }
+        }
 
         private bool _IsActiveSymptoms;
         public bool IsActiveSymptoms
@@ -36,7 +50,6 @@ namespace SaglikApp.Models
                     OnPropertyChanged("SymptomsTextColor");
                 }
             }
-
         }
 
         private string _SymptomsFontFamily;
@@ -51,7 +64,6 @@ namespace SaglikApp.Models
                     OnPropertyChanged("SymptomsFontFamily");
                 }
             }
-
         }
 
         private string _InputkitBorderColor;
@@ -80,7 +92,6 @@ namespace SaglikApp.Models
                     OnPropertyChanged("InputkitBackgroundColor");
                 }
             }
-
         }
 
     }

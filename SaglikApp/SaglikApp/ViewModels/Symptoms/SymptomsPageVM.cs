@@ -37,7 +37,7 @@ namespace SaglikApp.ViewModels.Symptoms
         #region Methods
 
         /// <summary>
-        /// TODO : To Open Start Log Popup Page...
+        /// TODO : To Open Breast Popup Page...
         /// </summary>
         /// <param name="obj"></param>
         private async void OnBreastPopupAsync(object obj)
@@ -48,11 +48,11 @@ namespace SaglikApp.ViewModels.Symptoms
         }
 
         /// <summary>
-        /// TODO : To Navigate On Select Box Page...
+        /// TODO : To Navigate On Distinctive Symptoms Page...
         /// </summary>
         private async void OnNextAsync(object obj)
         {
-           // await Navigation.PushModalAsync(new Views.SelectBox.SelectBoxPage());
+           await Navigation.PushModalAsync(new Views.Symptoms.AddSymptomsPage());
         }
 
         /// <summary>

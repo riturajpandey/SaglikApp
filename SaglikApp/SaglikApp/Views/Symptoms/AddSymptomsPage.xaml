@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:SaglikApp.CustomControls"
              mc:Ignorable="d"
-             x:Class="SaglikApp.Views.Symptoms.SymptomsPage"  Title="Symptoms Page" NavigationPage.HasNavigationBar="False">
+             x:Class="SaglikApp.Views.Symptoms.AddSymptomsPage" Title="Add Symptoms Page" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <!--Main Grid-->
@@ -25,7 +25,7 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,25,20,10" VerticalScrollBarVisibility="Never">
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,25,10,10" VerticalScrollBarVisibility="Never">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -36,56 +36,59 @@
 
                     <!--Primary Headers-->
                     <!--Semptomlar  / symptoms -->
-                    <Label Grid.Row="0"  Text="Semptomlar" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+                    <Label Grid.Row="0"  Text="Eklemek İstediğiniz BaşkaSemptom Var mı?" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
 
                     <!--Middle screen Frame-->
                     <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
-                        <Grid  HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="60"/>
-                            </Grid.ColumnDefinitions>
+                        <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
-                            <!--Plus Minus StackLayout Section-->
-                            <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
-                                <!--Plus Section-->
-                                <controls:CustomFrameForOpacity Style="{StaticResource CircleFrame}" BackgroundColor="{StaticResource AppBkgScreenColor}">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Image Source="plus.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                </controls:CustomFrameForOpacity>
-                                <!--Minus Section-->
-                                <controls:CustomFrameForOpacity Style="{StaticResource CircleFrame}" BackgroundColor="{StaticResource AppBkgScreenColor}">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Image Source="minus.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                </controls:CustomFrameForOpacity>
-                            </StackLayout>
-                            <!--Body Image Section-->
-                            <Grid  Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
-                                <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BreastPopupCommand}"/>
-                                </Grid.GestureRecognizers>
-                                <Image Source="body.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                            </Grid>
-                            <!--Return Section-->
-                            <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
-                                <controls:CustomFrameForOpacity  Style="{StaticResource CircleFrame}">
-                                <!--<controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                </controls:CustomFrameForOpacity.GestureRecognizers>-->
-                                <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <!--Search Bar-->
+                            <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}" HeightRequest="40" BorderColor="{StaticResource BrGrayColor}" >
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <controls:CustomEntry x:Name="SymptomsSearchbar" Grid.Column="0" Text="{Binding SymptomsName}" Placeholder="Arama, örn. göz sulanması" PlaceholderColor="{StaticResource TextGrayColor}" 
+                                                  Style="{StaticResource SecondaryRegularLabels}" FontSize="14" TranslationY="3" TextChanged="SymptomsSearchbar_TextChanged"/>
+                                    <Image Grid.Column="1" Source="search.png" HeightRequest="16" WidthRequest="16" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+                                </Grid>
                             </controls:CustomFrameForOpacity>
-                                <Label Text="Modeli Döndür" Style="{StaticResource BoldBlueLabels}" FontSize="12" Padding="5,0"/>
-                            </StackLayout>
+                            <Label Grid.Row="1" Style="{StaticResource SecondaryGrayLabels}" TextColor="{StaticResource DarkTextGrayColor}" Text="Seçmiş olduğunuz semptomlar dışında eklemek istedikleriniz varsa burada ekleyebilirsiniz. "/>
+
+                            <!--RepeaterView Symptoms section -->
+                            <controls:RepeaterView Grid.Row="2" x:Name="lvSymptoms" ItemsSource="{Binding SymptomsList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                                <controls:RepeaterView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <controls:CustomFrameForOpacity Style="{StaticResource BgBorderFrame}" Margin="0,5">
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" >
+                                                    <Label Text="{Binding SymptomsName}" Style="{StaticResource PrimaryBlueLabels}" FontSize="14"  Padding="5,0"/>
+                                                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                                                        <Image  Source="bluecross.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="20" WidthRequest="20"/>
+                                                        <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="Delete_Tapped"/>
+                                                        </Grid.GestureRecognizers>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </controls:CustomFrameForOpacity>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </controls:RepeaterView.ItemTemplate>
+                            </controls:RepeaterView>
+
+
+
+
                         </Grid>
                     </controls:CustomFrameForOpacity>
 
