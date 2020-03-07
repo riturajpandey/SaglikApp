@@ -27,6 +27,12 @@ namespace SaglikApp.Views.Radio
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
 
+        #region EVENTHANDLER
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            RadioVM.RadioBPList = new System.Collections.ObjectModel.ObservableCollection<RadioBPModel>(RadioBPModel.RadioBPList());
+        }
         /// <summary>
         /// TODO : To Click on Yes...
         /// </summary>
@@ -61,7 +67,7 @@ namespace SaglikApp.Views.Radio
                     item.IsRadioYesImg = false;
                     item.IsRadioNoImg = true;
                     item.IsRadioNotKnowImg = false;
-                }               
+                }
             }
         }
 
@@ -82,7 +88,8 @@ namespace SaglikApp.Views.Radio
                     item.IsRadioNotKnowImg = true;
                 }
             }
-        }
+        } 
+        #endregion
 
     }
 }

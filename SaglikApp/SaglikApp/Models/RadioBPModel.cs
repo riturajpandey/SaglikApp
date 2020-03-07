@@ -55,6 +55,13 @@ namespace SaglikApp.Models
             }
         }
 
-
+        public static List<RadioBPModel> RadioBPList()
+        {
+            return new List<RadioBPModel>
+            {
+                new RadioBPModel{Id="0", Title="Yüksek tansiyonum var", RadioYes="Evet",RadioNo="Hayır",RadioNotKnow="Bilmiyorum", IsRadioYesImg=true, IsRadioNoImg=false , IsRadioNotKnowImg=false},
+                new RadioBPModel{ Id="1", Title="Sigara kullanıyorum",RadioYes="Evet", RadioNo="Hayır",RadioNotKnow="Bilmiyorum", IsRadioYesImg=true, IsRadioNoImg=false , IsRadioNotKnowImg=false }
+            };
+        }
     }
 }

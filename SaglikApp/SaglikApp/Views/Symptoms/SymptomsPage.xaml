@@ -26,105 +26,138 @@
 
             <!--Middle screen scroll-->
             <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,25,20,10" VerticalScrollBarVisibility="Never">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
-                    <!--Primary Headers-->
-                    <!--Semptomlar  / symptoms -->
-                    <Label Grid.Row="0"  Text="Semptomlar" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
-
-                    <!--Middle screen Frame-->
-                    <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
-                        <Grid  HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="60"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-
-                            <!--Plus Minus StackLayout Section-->
-                            <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
-                                <!--Plus Section-->
-                                <controls:CustomFrameForOpacity Style="{StaticResource CircleFrame}" BackgroundColor="{StaticResource AppBkgScreenColor}">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Image Source="plus.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                </controls:CustomFrameForOpacity>
-                                <!--Minus Section-->
-                                <controls:CustomFrameForOpacity Style="{StaticResource CircleFrame}" BackgroundColor="{StaticResource AppBkgScreenColor}">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Image Source="minus.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                </controls:CustomFrameForOpacity>
-                            </StackLayout>
-                            <!--Body Image Section-->
-                            <Grid  Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
-                                <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BreastPopupCommand}"/>
-                                </Grid.GestureRecognizers>
-                                <Image Source="body.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                            </Grid>
-                            <!--Return Section-->
-                            <StackLayout Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
-                                <controls:CustomFrameForOpacity  Style="{StaticResource CircleFrame}">
-                                <!--<controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                </controls:CustomFrameForOpacity.GestureRecognizers>-->
-                                <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                            </controls:CustomFrameForOpacity>
-                                <Label Text="Modeli Döndür" Style="{StaticResource BoldBlueLabels}" FontSize="12" Padding="5,0"/>
-                            </StackLayout>
-                        </Grid>
-                    </controls:CustomFrameForOpacity>
-
-                    <!--Buttons Section-->
-                    <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
-                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <!--Primary Headers-->
+                        <!--Semptomlar  / symptoms -->
+                        <Label Grid.Row="0"  Text="Semptomlar" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
+
+                        <!--Middle screen Frame-->
+                        <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
+                            <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="60"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="145"/>
+                                    <ColumnDefinition Width="60"/>
                                 </Grid.ColumnDefinitions>
-                                <!--Back Arrow Section-->
-                                <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                </controls:CustomFrameForOpacity>
-                                <!--Boxview Section-->
-                                <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-                                <!--SONRAKİ/Next Section-->
-                                <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NextCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="20"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
-                                        <!--Right Arrow Section-->
-                                        <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                    </Grid>
-                                </controls:CustomFrameForOpacity>
+
+                                <!--Plus Minus StackLayout Section-->
+                                <Grid Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                                        <!--Plus Section-->
+                                        <controls:CustomFrameForOpacity Style="{StaticResource CircleFrame}" BackgroundColor="{StaticResource AppBkgScreenColor}">
+                                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                            </controls:CustomFrameForOpacity.GestureRecognizers>
+                                            <Image Source="plus.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        </controls:CustomFrameForOpacity>
+                                        <!--Minus Section-->
+                                        <controls:CustomFrameForOpacity Style="{StaticResource CircleFrame}" BackgroundColor="{StaticResource AppBkgScreenColor}">
+                                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                            </controls:CustomFrameForOpacity.GestureRecognizers>
+                                            <Image Source="minus.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        </controls:CustomFrameForOpacity>
+                                    </StackLayout>
+                                    <!--Return Section-->
+                                    <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                                        <controls:CustomFrameForOpacity  Style="{StaticResource CircleFrame}">
+                                            <!--<controls:CustomFrameForOpacity.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                </controls:CustomFrameForOpacity.GestureRecognizers>-->
+                                            <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        </controls:CustomFrameForOpacity>
+                                        <Label Text="Modeli Döndür" Style="{StaticResource BoldBlueLabels}" FontSize="12" Padding="5,0"/>
+                                    </StackLayout>
+                                </Grid>
+                                <!--Body Image Section-->
+                                <Grid  Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BreastPopupCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="body.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <Image Source="chestimg.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" TranslationY="90"/>
+                                    <Image Source="triangleimg.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" TranslationY="165"/>
+                                </Grid>
+
+                            </Grid>
+                        </controls:CustomFrameForOpacity>
+
+                        <!--Buttons Section-->
+                        <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="45"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="145"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--Back Arrow Section-->
+                                    <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource CircleFrame}">
+                                        <controls:CustomFrameForOpacity.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                                        </controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </controls:CustomFrameForOpacity>
+                                    <!--Boxview Section-->
+                                    <Grid Grid.Column="1" HeightRequest="4" BackgroundColor="{StaticResource AppBkgScreenColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <!--SONRAKİ/Next Section-->
+                                    <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource BlueFrame}" WidthRequest="143">
+                                        <controls:CustomFrameForOpacity.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                                        </controls:CustomFrameForOpacity.GestureRecognizers>
+                                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="20"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
+                                            <!--Right Arrow Section-->
+                                            <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                        </Grid>
+                                    </controls:CustomFrameForOpacity>
+                                </Grid>
+                            </controls:CustomFrameForOpacity>
+                        </Grid>
+                    </Grid>
+                    <!--Popup-->
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"/>
+                        </Grid.RowDefinitions>
+                        <controls:CustomFrameForOpacity Grid.Row="0" Padding="0" IsClippedToBounds="True" CornerRadius="20" BackgroundColor="{StaticResource AppTextWhiteColor}" TranslationY="276">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource AppTextBlueColor}" Padding="0,0,10,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--Cross Icon-->
+                                    <controls:CustomFrameForOpacity Grid.Column="1" HeightRequest="18" WidthRequest="18" CornerRadius="9" HorizontalOptions="EndAndExpand" 
+                                                                    VerticalOptions="CenterAndExpand" IsClippedToBounds="True"
+                                                                    Padding="0"
+                                                                    BackgroundColor="{StaticResource AppTextLightBlueColor}">
+                                        <Image Source="whiteCrossimg.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="6" WidthRequest="6"/>
+                                    </controls:CustomFrameForOpacity>
+                                </Grid>
                             </Grid>
                         </controls:CustomFrameForOpacity>
                     </Grid>
