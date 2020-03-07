@@ -30,7 +30,13 @@ namespace SaglikApp.iOS
 
             //SynFussion Slider
             new SfRangeSliderRenderer();
-           
+
+            // Add the below line if you are using SfLinearProgressBar.
+            Syncfusion.XForms.iOS.ProgressBar.SfLinearProgressBarRenderer.Init();
+
+            // Add the below line if you are using SfCircularProgressBar.  
+            Syncfusion.XForms.iOS.ProgressBar.SfCircularProgressBarRenderer.Init();
+
             #endregion
 
             LoadApplication(new App());

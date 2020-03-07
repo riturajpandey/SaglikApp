@@ -30,6 +30,8 @@
             <Color x:Key="TextGrayColor">#CFCFCF</Color>
             <Color x:Key="DarkTextGrayColor">#ADADAD</Color>
             <Color x:Key="ProgessGrayColor">#C4C4C4</Color>
+            <Color x:Key="GrayTextSmallColor">#999999</Color>
+
 
             <!--Blue Shades-->
             <Color x:Key="AppTextBlueColor">#0072C3</Color>
@@ -167,7 +169,7 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
-            <!--Secondary Regular Gray Labels-->
+            <!--Secondary Regular  Labels-->
             <Style x:Key="SecondaryRegularLabels" TargetType="Label">
                 <Setter Property="FontSize" Value="20" />
                 <Setter Property="FontFamily" Value="{DynamicResource  PoppinsRegular}" />

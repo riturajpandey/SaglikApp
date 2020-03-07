@@ -83,6 +83,9 @@
     <PackageReference Include="Syncfusion.Licensing">
       <Version>17.1.0.38</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar">
+      <Version>17.1.0.38</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider">
       <Version>17.1.0.38</Version>
     </PackageReference>
