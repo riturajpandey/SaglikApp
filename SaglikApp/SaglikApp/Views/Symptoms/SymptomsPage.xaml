@@ -71,13 +71,8 @@
                                         </controls:CustomFrameForOpacity>
                                     </StackLayout>
                                     <!--Return Section-->
-                                    <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
-                                        <controls:CustomFrameForOpacity  Style="{StaticResource CircleFrame}">
-                                            <!--<controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                </controls:CustomFrameForOpacity.GestureRecognizers>-->
-                                            <Image Source="leftarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                        </controls:CustomFrameForOpacity>
+                                    <StackLayout Grid.Row="1" Grid.Column="0" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                                        <Image Source="arw.png" Aspect="AspectFit" HeightRequest="30" WidthRequest="35" HorizontalOptions="Center" VerticalOptions="Center"/>
                                         <Label Text="Modeli Döndür" Style="{StaticResource BoldBlueLabels}" FontSize="12" Padding="5,0"/>
                                     </StackLayout>
                                 </Grid>

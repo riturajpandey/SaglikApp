@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SaglikApp.ViewModels.HeightWeight
@@ -63,7 +65,14 @@ namespace SaglikApp.ViewModels.HeightWeight
         /// </summary>
         private async void OnNextAsync(object obj)
         {
-            await Navigation.PushModalAsync(new Views.Radio.RadioPage());
+            //Apply Validations..
+            if (!await Validate()) return;
+            try
+            {
+                await Navigation.PushModalAsync(new Views.Radio.RadioPage());
+            }
+            catch (Exception ex)
+            { }          
         }
 
         /// <summary>
@@ -72,6 +81,25 @@ namespace SaglikApp.ViewModels.HeightWeight
         public async void OnBackAsync()
         {
             await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// TODO : To Validate User Login Fields...
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> Validate()
+        {
+            if (string.IsNullOrEmpty(Centimeter))
+            {
+                UserDialogs.Instance.Alert("Lütfen cm girin.");
+                return false;
+            }
+            if (string.IsNullOrEmpty(Kilogram))
+            {
+                UserDialogs.Instance.Alert("Lütfen kg girin.");
+                return false;
+            }
+            return true;
         }
 
         #endregion

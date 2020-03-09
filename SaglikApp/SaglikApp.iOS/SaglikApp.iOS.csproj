@@ -451,4 +451,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\triangleimg%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arw%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arw%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\femail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\femail%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\femail%403x.png" />
+  </ItemGroup>
 </Project>

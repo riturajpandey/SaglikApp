@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SaglikApp.ViewModels.Terms
@@ -32,7 +34,19 @@ namespace SaglikApp.ViewModels.Terms
         #endregion
 
         #region Properties
-
+        private bool _AcceptTerm;
+        public bool AcceptTerm
+        {
+            get { return _AcceptTerm; }
+            set
+            {
+                if (_AcceptTerm != value)
+                {
+                    _AcceptTerm = value;
+                    OnPropertyChanged("AcceptTerm");
+                }
+            }
+        }
         #endregion
 
         #region Methods
@@ -42,7 +56,15 @@ namespace SaglikApp.ViewModels.Terms
         /// </summary>
         public async void OnProceedAsync()
         {
-            await Navigation.PushModalAsync(new Views.Nick.NickPage());
+            //Apply Validations..
+            if (!await Validate()) return;
+            try
+            {
+                await Navigation.PushModalAsync(new Views.Nick.NickPage());
+            }
+            catch (Exception ex)
+            { }
+            
         }
 
         /// <summary>
@@ -51,6 +73,21 @@ namespace SaglikApp.ViewModels.Terms
         public async void OnBackAsync()
         {
             await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// TODO : To Validate Yes and NO Fields...
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> Validate()
+        {
+            if ((AcceptTerm == false ))
+            {
+                UserDialogs.Instance.Alert("Lütfen Kullanım Koşullarını kabul edin.");
+                return false;
+            }
+
+            return true;
         }
 
         #endregion

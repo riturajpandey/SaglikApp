@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SaglikApp.ViewModels.Nick
@@ -25,7 +27,7 @@ namespace SaglikApp.ViewModels.Nick
         #endregion
 
         #region Properties
-        private string _Name= "Ahmet";
+        private string _Name;
         public string Name
         {
             get { return _Name; }
@@ -47,7 +49,15 @@ namespace SaglikApp.ViewModels.Nick
         /// </summary>
         private async void OnNextAsync(object obj)
         {
-            await Navigation.PushModalAsync(new Views.SexAge.SexAgePage());
+            //Apply Validations..
+            if (!await Validate()) return;
+            try
+            {
+                await Navigation.PushModalAsync(new Views.SexAge.SexAgePage());
+            }
+            catch (Exception ex)
+            { }
+           
         }
 
         /// <summary>
@@ -56,6 +66,20 @@ namespace SaglikApp.ViewModels.Nick
         public async void OnBackAsync()
         {
             await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// TODO : To Validate User Login Fields...
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> Validate()
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                UserDialogs.Instance.Alert("Lütfen adınızı giriniz.");
+                return false;
+            }           
+            return true;
         }
 
         #endregion

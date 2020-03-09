@@ -36,7 +36,7 @@
                     <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" 
                                                    Margin="30,0,30,0" >
                         <!--Name Section-->
-                        <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Name}"/>
+                        <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Name}" Placeholder="isim"/>
                     </controls:CustomFrameForOpacity>
                 </StackLayout>
                 <!--Buttons Section-->

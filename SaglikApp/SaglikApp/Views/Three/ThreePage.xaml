@@ -32,7 +32,6 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
-
                     </Grid.RowDefinitions>
 
                     <!--Primary Headers-->
@@ -45,13 +44,19 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <controls:CustomFrameForOpacity  Grid.Row="0" Style="{StaticResource PrimaryFrame}" HorizontalOptions="CenterAndExpand" WidthRequest="160"  >
+                        <controls:CustomFrameForOpacity  Grid.Row="0" Style="{StaticResource PrimaryFrame}" BackgroundColor="{Binding SelectYes}" HorizontalOptions="CenterAndExpand" WidthRequest="160"  >
+                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding YesCommand}" NumberOfTapsRequired="1"/>
+                            </controls:CustomFrameForOpacity.GestureRecognizers>
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
                                 <Image Source="righttik.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                <Label Text="Event" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                                <Label Text="Evet" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
-                        <controls:CustomFrameForOpacity  Grid.Row="1" Style="{StaticResource PrimaryFrame}" HorizontalOptions="CenterAndExpand" WidthRequest="160">
+                        <controls:CustomFrameForOpacity  Grid.Row="1" Style="{StaticResource PrimaryFrame}"  BackgroundColor="{Binding SelectNo}" HorizontalOptions="CenterAndExpand" WidthRequest="160">
+                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NoCommand}" NumberOfTapsRequired="1"/>
+                            </controls:CustomFrameForOpacity.GestureRecognizers>
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                                 <Image Source="cross.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 <Label Text="Hayır" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
