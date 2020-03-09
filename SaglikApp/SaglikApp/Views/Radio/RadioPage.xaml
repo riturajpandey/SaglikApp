@@ -33,14 +33,13 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
-                       
                     </Grid.RowDefinitions>
 
                     <!--Primary Headers-->
                     <Label Grid.Row="0"  Text="Lütfen aşağıdaki ifadelerden sizin için geçerli olanların tamamını işaretleyin" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
 
                     <!--RepeaterView section -->
-                    <controls:RepeaterView Grid.Row="1" x:Name="lvRadioBP" ItemsSource="{Binding RadioBPList}"  HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" >
+                    <controls:RepeaterView Grid.Row="1" x:Name="lvRadioBP" ItemsSource="{Binding RadioBPList}"  HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" TranslationY="-20">
                         <controls:RepeaterView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

@@ -1,7 +1,9 @@
 ﻿using Rg.Plugins.Popup.Extensions;
+using SaglikApp.Models;
 using SaglikApp.Views.Popups;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
@@ -31,6 +33,20 @@ namespace SaglikApp.ViewModels.Symptoms
         #endregion
 
         #region Properties
+
+        private ObservableCollection<ChestModel> _ChestList;
+        public ObservableCollection<ChestModel> ChestList
+        {
+            get { return _ChestList; }
+            set
+            {
+                if (_ChestList != value)
+                {
+                    _ChestList = value;
+                    OnPropertyChanged("ChestList");
+                }
+            }
+        }
 
         #endregion
 

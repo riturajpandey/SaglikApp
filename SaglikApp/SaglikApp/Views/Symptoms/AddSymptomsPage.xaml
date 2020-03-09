@@ -25,7 +25,7 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,25,10,10" VerticalScrollBarVisibility="Never">
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,20,10,10" VerticalScrollBarVisibility="Never">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -39,11 +39,12 @@
                     <Label Grid.Row="0"  Text="Eklemek İstediğiniz BaşkaSemptom Var mı?" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
 
                     <!--Middle screen Frame-->
-                    <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
+                    <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,8,0,5">
                         <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="10"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
@@ -65,8 +66,9 @@
                             </controls:CustomFrameForOpacity>
                             <Label Grid.Row="1" Style="{StaticResource SecondaryGrayLabels}" TextColor="{StaticResource DarkTextGrayColor}" Text="Seçmiş olduğunuz semptomlar dışında eklemek istedikleriniz varsa burada ekleyebilirsiniz. "/>
 
+                            <BoxView  Grid.Row="2" HeightRequest="1" BackgroundColor="{StaticResource BrGrayColor}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
                             <!--RepeaterView Symptoms section -->
-                            <controls:RepeaterView Grid.Row="2" x:Name="lvSymptoms" ItemsSource="{Binding SymptomsList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                            <controls:RepeaterView Grid.Row="3" x:Name="lvSymptoms" ItemsSource="{Binding SymptomsList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                                 <controls:RepeaterView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -85,15 +87,11 @@
                                     </DataTemplate>
                                 </controls:RepeaterView.ItemTemplate>
                             </controls:RepeaterView>
-
-
-
-
                         </Grid>
                     </controls:CustomFrameForOpacity>
 
                     <!--Buttons Section-->
-                    <Grid Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>

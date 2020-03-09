@@ -25,7 +25,7 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,25,20,10" VerticalScrollBarVisibility="Never">
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,20,20,10" VerticalScrollBarVisibility="Never">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -39,7 +39,7 @@
                     <Label Grid.Row="0"  Text="En Belirgin Semptomlar" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
 
                     <!--Middle screen Frame-->
-                    <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,15,0,5">
+                    <controls:CustomFrameForOpacity Grid.Row="1" Style="{StaticResource PrimaryFrame}" IsClippedToBounds="True" Margin="0,8,0,5">
                         <Grid ColumnSpacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>

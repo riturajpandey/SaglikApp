@@ -34,7 +34,10 @@ namespace SaglikApp.Views.Symptoms
         /// <param name="e"></param>
         private void ChestPopup_Tapped(object sender, EventArgs e)
         {
+            SymptomsVM.ChestList = new System.Collections.ObjectModel.ObservableCollection<Models.ChestModel>(Models.ChestModel.ChestList());
+         
             ChestPopup.IsVisible = true;
+
         }
 
         /// <summary>

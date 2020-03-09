@@ -37,7 +37,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <!--Person mobile Image-->
-                        <Image Grid.Row="0" Source="personmobile.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <Image Grid.Row="0" Source="personmobile.png" Aspect="AspectFit" HeightRequest="212" WidthRequest="239" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <!--Primary Headers-->
                         <Label Grid.Row="1" Text="Merhaba" Style="{StaticResource PrimaryGrayHeaders}" Padding="0,10"/>
                         <Label Grid.Row="2" Padding="0,0,0,20" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie orci, vitae mattis ex. Praesent sit amet sem aliquam, faucibus sem vitae, mollis dolor. Nunc semper, risus quis commodo convallis, arcu erat ultrices elit, ac ullamcorper sem risus quis augue." Style="{StaticResource SecondaryGrayLabels}" />

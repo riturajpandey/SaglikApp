@@ -40,14 +40,14 @@
                     </StackLayout>
 
                     <!--Slider Section-->
-                    <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" HorizontalOptions="FillAndExpand" HeightRequest="35">
+                    <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" HorizontalOptions="FillAndExpand" HeightRequest="33">
                         <range:SfRangeSlider x:Name="rangeslider" Minimum="0" Maximum="10" LabelColor="Red" SnapsTo="StepValues" StepFrequency="1"
                       ShowRange="False" Value="0" RangeStart="0" RangeEnd="5" Orientation="Horizontal" TickFrequency="1" ShowCustomLabel="True"
-                       TickPlacement="None" TrackColor="{StaticResource AppBkgScreenColor}" TrackSelectionColor="{StaticResource AppTextBlueColor}" TrackSelectionThickness="5" TrackThickness="5" KnobColor="White" 
-                        HorizontalOptions="FillAndExpand" VerticalOptions="Start"  FontSize="16" FontFamily="{StaticResource PoppinsSemiBold}" >
+                       TickPlacement="None" TrackColor="{StaticResource AppBkgScreenColor}" TrackSelectionColor="{StaticResource AppTextBlueColor}" TrackSelectionThickness="5" TrackThickness="5" KnobColor="White"  
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
                         </range:SfRangeSlider>
                     </controls:CustomFrameForOpacity>
-                    <StackLayout Orientation="Horizontal" Spacing="22" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="20,0,0,0">
                         <Label Text="0" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
                         <Label Text="1" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>
                         <Label Text="2" Style="{StaticResource PrimaryGraySemiBoldHeaders}"/>

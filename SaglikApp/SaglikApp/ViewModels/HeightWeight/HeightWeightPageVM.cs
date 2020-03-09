@@ -26,7 +26,7 @@ namespace SaglikApp.ViewModels.HeightWeight
         #endregion
 
         #region Properties
-        private string _Centimeter = "00";
+        private string _Centimeter;
         public string Centimeter
         {
             get { return _Centimeter; }
@@ -40,7 +40,7 @@ namespace SaglikApp.ViewModels.HeightWeight
             }
         }
 
-        private string _Kilogram = "00";
+        private string _Kilogram;
         public string Kilogram
         {
             get { return _Kilogram; }

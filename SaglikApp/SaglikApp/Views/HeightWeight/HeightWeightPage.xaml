@@ -23,32 +23,33 @@
                     <Image  Source="appname.png" HeightRequest="37" WidthRequest="165"/>
                 </StackLayout>
             </Grid>
-            <!--Details Section-->
-            <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,0,10,20">
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never">
+                <!--Details Section-->
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,0,10,20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.8*"/>
                     <RowDefinition Height="3*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <!--Lütfen size hitap edebilmemiz için adınızı giriniz / Please enter your height and weight values-->
-                <Grid Grid.Row="1" RowSpacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-20">
+                <Grid Grid.Row="1" RowSpacing="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="-20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="30"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Style="{StaticResource PrimaryGraySemiBoldHeaders}" Text="Lütfen size hitap edebilmemiz için adınızı giriniz" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <Label Grid.Row="1" Style="{StaticResource SmallRegularLabels}" Text="Vücut Kitle İndeksi (VKI) hesaplamanız için sonuçları doğru girmenizi tavsiye ederiz." HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <StackLayout Grid.Row="3" Spacing="20" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
-                        <controls:CustomFrameForOpacity  Style="{StaticResource SecondaryFrame}" WidthRequest="70" >
+                        <controls:CustomFrameForOpacity  Style="{StaticResource SecondaryFrame}"  WidthRequest="70" >
                             <!--Name Section-->
-                            <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Centimeter}"/>
+                            <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}"  Text="{Binding Centimeter}" Keyboard="Numeric" MaxLength="3" Placeholder="00" />
                         </controls:CustomFrameForOpacity>
                         <Label Style="{StaticResource SecondaryRegularLabels}" Text="cm"/>
                         <controls:CustomFrameForOpacity  Style="{StaticResource SecondaryFrame}" WidthRequest="70">
                             <!--Name Section-->
-                            <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Kilogram}"/>
+                            <controls:CustomEntry Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Kilogram}" Keyboard="Numeric" MaxLength="3" Placeholder="00"/>
                         </controls:CustomFrameForOpacity>
                         <Label Style="{StaticResource SecondaryRegularLabels}" Text="kg"/>
                     </StackLayout>
@@ -94,6 +95,7 @@
                     </controls:CustomFrameForOpacity>
                 </Grid>
             </Grid>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 

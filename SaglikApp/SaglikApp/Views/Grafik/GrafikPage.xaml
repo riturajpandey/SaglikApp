@@ -25,8 +25,8 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,25,10,10" VerticalScrollBarVisibility="Never">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <ScrollView Grid.Row="1"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,15,10,10" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -40,7 +40,7 @@
                     <Label Grid.Row="0"  Text="Sonuçlar" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand"/>
 
                     <!--Sonuçlar  / Results -->
-                    <Label Grid.Row="1"  Text="Lütfen aşağıdaki listenin tam olmayabileceğini, yalnızca bilgilendirme amaçlı olarak sunulduğunu ve uzman bir tıbbi görüş içermediğini dikkate alınız." Style="{StaticResource SmallRegularLabels}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="12"/>
+                    <Label Grid.Row="1"  Text="Lütfen aşağıdaki listenin tam olmayabileceğini, yalnızca bilgilendirme amaçlı olarak sunulduğunu ve uzman bir tıbbi görüş içermediğini dikkate alınız." Style="{StaticResource SmallRegularLabels}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="12" Padding="0,0,0,10"/>
 
                     <!--Popup-->
                     <controls:CustomFrameForOpacity Grid.Row="2" Padding="0" IsClippedToBounds="True" CornerRadius="20" BackgroundColor="{StaticResource AppTextWhiteColor}" Margin="0,10">
@@ -126,7 +126,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="20"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="İLERLER"/>
+                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="Tekrarla"/>
                                         <!--Right Arrow Section-->
                                         <Image Grid.Column="1" Source="refresh.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                                     </Grid>

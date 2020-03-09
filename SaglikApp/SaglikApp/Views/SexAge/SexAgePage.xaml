@@ -31,7 +31,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
@@ -44,15 +44,15 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                        <controls:CustomFrameForOpacity  Grid.Column="0" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="5,10">
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                <Image Source="femaile.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Image Source="femaile.png" Aspect="AspectFit" HeightRequest="67" WidthRequest="38" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 <Label Text="Kadın" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
-                        <controls:CustomFrameForOpacity  Grid.Column="1" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="10">
+                        <controls:CustomFrameForOpacity  Grid.Column="1" Style="{StaticResource PrimaryFrame}" Padding="8" Margin="5,10">
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image Source="male.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                <Image Source="male.png" Aspect="AspectFit" HeightRequest="67" WidthRequest="38" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 <Label Text="Erkek" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
@@ -67,7 +67,7 @@
                         </Grid.GestureRecognizers>
                         <DatePicker x:Name="DatePck" IsVisible="False" DateSelected="DatePkr_DateSelected" Unfocused="DatePkr_Unfocused"/>
                         <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                            <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}"  >
+                            <controls:CustomFrameForOpacity Style="{StaticResource SecondaryFrame}" >
                                 <!--Date Section-->
                                 <Label Style="{StaticResource SecondaryRegularLabels}" Text="{Binding Date}"/>
                             </controls:CustomFrameForOpacity>

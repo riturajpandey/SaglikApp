@@ -26,8 +26,8 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,25,10,10" VerticalScrollBarVisibility="Never">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,20,10,10" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -59,7 +59,7 @@
                                         <ViewCell>
                                             <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
                                                 <Grid.RowDefinitions>
-                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="35"/>
                                                     <RowDefinition Height="25"/>
                                                     <RowDefinition Height="20"/>
                                                     <RowDefinition Height="10"/>
@@ -68,7 +68,7 @@
                                                     <ColumnDefinition Width="*"/>
                                                     <ColumnDefinition Width="20"/>
                                                 </Grid.ColumnDefinitions>
-                                                <progressBar:SfLinearProgressBar Grid.Row="0" Grid.Column="0" Progress="{Binding Progess}" TrackHeight="40" ProgressColor="{Binding ProgessColor}" />
+                                                <progressBar:SfLinearProgressBar Grid.Row="0" Grid.Column="0" Progress="{Binding Progess}" TrackHeight="35" ProgressColor="{Binding ProgessColor}" />
                                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Progesspercent}" FontSize="12" Style="{StaticResource SemiBoldWhiteLabel}" Padding="10,0"/>
                                                 <Image Grid.Row="0" Grid.Column="1" Source="detail.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                                                 <Label Grid.Row="1" Grid.Column="0"  Text="{Binding DiseaseName}" FontSize="18" Style="{StaticResource PrimaryGrayHeaders}"/>

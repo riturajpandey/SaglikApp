@@ -24,8 +24,8 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,25,20,20" VerticalScrollBarVisibility="Never">
-                <Grid RowSpacing="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,15,20,15" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -40,21 +40,21 @@
                     <Label Grid.Row="0"  Text="Ağrılarınız her 3 ayda bir tekrarlıyor mu?" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="8,0"/>
 
                     <!--Yes and No section Grid-->
-                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,10" >
+                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <controls:CustomFrameForOpacity  Grid.Row="0" Style="{StaticResource PrimaryFrame}" HorizontalOptions="CenterAndExpand" WidthRequest="160"  >
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
-                                <Image Source="femaile.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                <Label Text="Kadın" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                                <Image Source="righttik.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="Event" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
                         <controls:CustomFrameForOpacity  Grid.Row="1" Style="{StaticResource PrimaryFrame}" HorizontalOptions="CenterAndExpand" WidthRequest="160">
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image Source="male.png" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                <Label Text="Erkek" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                                <Image Source="cross.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="Hayır" Style="{StaticResource PrimaryGraySemiBoldHeaders}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                             </StackLayout>
                         </controls:CustomFrameForOpacity>
                     </Grid>
