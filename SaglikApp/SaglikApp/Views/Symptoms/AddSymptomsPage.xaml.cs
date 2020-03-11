@@ -31,15 +31,15 @@ namespace SaglikApp.Views.Symptoms
         /// <param name="e"></param>
         private void SymptomsSearchbar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(e.NewTextValue))
-            {
-                lvSymptoms.ItemsSource = AddSymptomsVM.SymptomsList;
-            }
-            else
-            {
-                string filter = SymptomsSearchbar.Text;
-                lvSymptoms.ItemsSource = AddSymptomsVM.SymptomsList.Where(x => x.SymptomsName.ToLower().Contains(filter.ToLower())).ToList();
-            }
+            //if (string.IsNullOrEmpty(e.NewTextValue))
+            //{
+            //    lvSymptoms.ItemsSource = AddSymptomsVM.SymptomsList;
+            //}
+            //else
+            //{
+            //    string filter = SymptomsSearchbar.Text;
+            //    lvSymptoms.ItemsSource = AddSymptomsVM.SymptomsList.Where(x => x.SymptomsName.ToLower().Contains(filter.ToLower())).ToList();
+            //}
         }
 
         /// <summary>

@@ -91,7 +91,7 @@
                         <!--Back Command Tap-->
                         <controls:CustomFrameForOpacity Grid.Row="7" Style="{StaticResource PinkFrame}">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5">
-                                <Image Source="leftarrow.png" Aspect="AspectFit" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Image Source="leftarrow.png" Aspect="AspectFit" HeightRequest="16" WidthRequest="16" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Label Text="GERİ" Style="{StaticResource SecondaryWhiteLabels}" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                             <controls:CustomFrameForOpacity.GestureRecognizers>
@@ -100,9 +100,9 @@
                         </controls:CustomFrameForOpacity>
                         <!--Proceed Command Tap-->
                         <controls:CustomFrameForOpacity Grid.Row="7" Style="{StaticResource BlueFrame}">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,8">
                                 <Label Text="İLERLE" Style="{StaticResource SecondaryWhiteLabels}" />
-                                <Image Source="rightarrow.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                <Image Source="rightarrow.png" Aspect="AspectFit" HeightRequest="16" WidthRequest="16" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
                             </StackLayout>
                             <controls:CustomFrameForOpacity.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ProceedCommand}"/>

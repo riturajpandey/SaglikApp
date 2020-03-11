@@ -48,6 +48,9 @@ namespace SaglikApp.Views.Radio
                     item.IsRadioYesImg = true;
                     item.IsRadioNoImg = false;
                     item.IsRadioNotKnowImg = false;
+                    item.SelectedBackgroundYes = "#F6FBFF";
+                    item.SelectedBackgroundNo = "#FFFFFF";
+                    item.SelectedBackgroundNotKnow = "#FFFFFF";
                 }
             }
         }
@@ -67,6 +70,9 @@ namespace SaglikApp.Views.Radio
                     item.IsRadioYesImg = false;
                     item.IsRadioNoImg = true;
                     item.IsRadioNotKnowImg = false;
+                    item.SelectedBackgroundYes = "#FFFFFF";
+                    item.SelectedBackgroundNo = "#F6FBFF";
+                    item.SelectedBackgroundNotKnow = "#FFFFFF";
                 }
             }
         }
@@ -86,6 +92,9 @@ namespace SaglikApp.Views.Radio
                     item.IsRadioYesImg = false;
                     item.IsRadioNoImg = false;
                     item.IsRadioNotKnowImg = true;
+                    item.SelectedBackgroundYes = "#FFFFFF";
+                    item.SelectedBackgroundNo = "#FFFFFF";
+                    item.SelectedBackgroundNotKnow = "#F6FBFF";
                 }
             }
         } 

@@ -75,7 +75,7 @@ namespace SaglikApp.Models
                 if (_InputkitBorderColor != value)
                 {
                     _InputkitBorderColor = value;
-                    OnPropertyChanged("_InputkitBorderColor");
+                    OnPropertyChanged("InputkitBorderColor");
                 }
             }
         }

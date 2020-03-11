@@ -65,14 +65,14 @@
                                 <controls:CustomFrameForOpacity.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NextCommand}"/>
                                 </controls:CustomFrameForOpacity.GestureRecognizers>
-                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="8,7">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="20"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="SONRAKİ"/>
                                     <!--Right Arrow Section-->
-                                    <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                                 </Grid>
                             </controls:CustomFrameForOpacity>
                         </Grid>

@@ -22,13 +22,13 @@ namespace SaglikApp.ViewModels.Symptoms
             SymptomsList = new ObservableCollection<SymptomsNameModel>
             {
                  new SymptomsNameModel{Id="0", SymptomsName="Halsizlik"},
-                 new SymptomsNameModel{Id="0", SymptomsName="Sarılık"},
-                 new SymptomsNameModel{Id="0", SymptomsName="Nefes Darlığı"},
-                 new SymptomsNameModel{Id="0", SymptomsName="İştahsızlık"},
-                 new SymptomsNameModel{Id="0", SymptomsName="Kilo Kaybı"},
-                 new SymptomsNameModel{Id="0", SymptomsName="Ateş"},
-                 new SymptomsNameModel{Id="0", SymptomsName="Keyifsizlik"},
-                 new SymptomsNameModel{Id="0", SymptomsName="Üst uzuvlarda şiddetli ağrı"},              
+                 new SymptomsNameModel{Id="1", SymptomsName="Sarılık"},
+                 new SymptomsNameModel{Id="2", SymptomsName="Nefes Darlığı"},
+                 new SymptomsNameModel{Id="3", SymptomsName="İştahsızlık"},
+                 new SymptomsNameModel{Id="4", SymptomsName="Kilo Kaybı"},
+                 new SymptomsNameModel{Id="5", SymptomsName="Ateş"},
+                 new SymptomsNameModel{Id="6", SymptomsName="Keyifsizlik"},
+                 new SymptomsNameModel{Id="7", SymptomsName="Üst uzuvlarda şiddetli ağrı"},              
             };
         }
         #endregion

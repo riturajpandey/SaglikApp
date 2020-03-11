@@ -14,6 +14,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <!--Header-->
             <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -26,13 +27,11 @@
             </Grid>
 
             <!--Middle screen scroll-->
-            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="10,20,10,10" VerticalScrollBarVisibility="Never">
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Margin="20,20,20,0" VerticalScrollBarVisibility="Never">
                 <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
@@ -82,52 +81,53 @@
                         </Grid>
                     </controls:CustomFrameForOpacity>
 
-                    <!--Buttons Section-->
-                    <Grid Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
-                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    
+                </Grid>
+            </ScrollView>
+            <!--Buttons Section-->
+            <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="20,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <controls:CustomFrameForOpacity Grid.Row="0" Style="{StaticResource RoundedFrame}">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="125"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!--SONRAKİ/Next Section-->
+                        <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource BlueFrame}" HeightRequest="30"  WidthRequest="143">
+                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                            </controls:CustomFrameForOpacity.GestureRecognizers>
+                            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Padding="0,3">
+                                <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="CEVAPLARIM"/>
+                            </Grid>
+                        </controls:CustomFrameForOpacity>
+
+                        <!--Boxview Section-->
+                        <Grid Grid.Column="1" HeightRequest="4"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                        <!--Back Arrow Section-->
+                        <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource CircleFrame}" WidthRequest="143">
+                            <controls:CustomFrameForOpacity.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                            </controls:CustomFrameForOpacity.GestureRecognizers>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15,9">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="125"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="125"/>
+                                    <ColumnDefinition Width="20"/>
                                 </Grid.ColumnDefinitions>
-
-                                <!--SONRAKİ/Next Section-->
-                                <controls:CustomFrameForOpacity Grid.Column="0" Style="{StaticResource BlueFrame}" HeightRequest="30"  WidthRequest="143">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
-                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="CEVAPLARIM"/>
-                                    </Grid>
-                                </controls:CustomFrameForOpacity>
-
-                                <!--Boxview Section-->
-                                <Grid Grid.Column="1" HeightRequest="4"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-                               
-                                <!--Back Arrow Section-->
-                                <controls:CustomFrameForOpacity Grid.Column="2" Style="{StaticResource CircleFrame}" WidthRequest="143">
-                                    <controls:CustomFrameForOpacity.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NextCommand}"/>
-                                    </controls:CustomFrameForOpacity.GestureRecognizers>
-                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="20"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="İLERLER"/>
-                                        <!--Right Arrow Section-->
-                                        <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                                    </Grid>
-                                </controls:CustomFrameForOpacity>
+                                <Label Grid.Column="0" Style="{StaticResource SemiBoldWhiteLabel}" Text="İLERLER"/>
+                                <!--Right Arrow Section-->
+                                <Image Grid.Column="1" Source="rightarrow.png" HeightRequest="16" WidthRequest="16" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                             </Grid>
                         </controls:CustomFrameForOpacity>
                     </Grid>
-                </Grid>
-            </ScrollView>
+                </controls:CustomFrameForOpacity>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 

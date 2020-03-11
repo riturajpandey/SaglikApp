@@ -43,9 +43,9 @@
                         <Label Grid.Row="2" Padding="0,0,0,20" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et molestie orci, vitae mattis ex. Praesent sit amet sem aliquam, faucibus sem vitae, mollis dolor. Nunc semper, risus quis commodo convallis, arcu erat ultrices elit, ac ullamcorper sem risus quis augue." Style="{StaticResource SecondaryGrayLabels}" />
                         <!--Proceed Command Tap-->
                         <controls:CustomFrameForOpacity Grid.Row="3" Style="{StaticResource BlueFrame}">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,5">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,8">
                                 <Label Text="İLERLE" Style="{StaticResource SecondaryWhiteLabels}" />
-                                <Image Source="rightarrow.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                <Image Source="rightarrow.png" Aspect="AspectFit" HeightRequest="16" WidthRequest="16" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
                             </StackLayout>
                             <controls:CustomFrameForOpacity.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ProceedCommand}"/>
